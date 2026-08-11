@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +14,6 @@
 
 
 <style>
-
-/* =========================
-   BASIC
-   ========================= */
 
 * {
   box-sizing: border-box;
@@ -106,17 +101,136 @@ nav {
 }
 
 
-.menu a {
+.menu-item {
 
-  transition:
-    opacity 0.3s ease;
+  position: relative;
 
 }
 
 
-.menu a:hover {
+.menu-item > a,
+.projects-button {
 
-  opacity: 0.5;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  background: none;
+
+  border: none;
+
+  padding: 0;
+
+  cursor: pointer;
+
+}
+
+
+.menu-item > a:hover,
+.projects-button:hover {
+
+  opacity: 0.55;
+
+}
+
+
+/* =========================
+   PROJECTS DROPDOWN
+   ========================= */
+
+.dropdown {
+
+  position: absolute;
+
+  top: 22px;
+
+  right: 0;
+
+  min-width: 120px;
+
+  padding-top: 10px;
+
+  background: #111;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateY(-5px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+}
+
+
+/* Desktop hover */
+
+.projects:hover .dropdown {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* Mobile / click */
+
+.projects.open .dropdown {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+}
+
+
+.dropdown a {
+
+  display: block;
+
+  padding:
+    6px 0;
+
+  text-align: right;
+
+  font-size: 10px;
+
+  letter-spacing: 1.8px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+}
+
+
+.dropdown a:hover {
+
+  opacity: 0.55;
 
 }
 
@@ -217,6 +331,28 @@ nav {
 
     gap: 15px;
 
+  }
+
+
+  .menu-item > a,
+  .projects-button {
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+  }
+
+
+  .dropdown {
+
+    top: 19px;
+
+  }
+
+
+  .dropdown a {
+
     font-size: 9px;
 
   }
@@ -266,19 +402,53 @@ nav {
   <div class="menu">
 
 
-    <a href="projects.html">
-      PROJECTS
-    </a>
+    <!-- PROJECTS -->
+
+    <div
+      class="menu-item projects"
+      id="projectsMenu"
+    >
+
+      <button
+        class="projects-button"
+        id="projectsButton"
+        type="button"
+      >
+        PROJECTS
+      </button>
 
 
-    <a href="about.html">
-      ABOUT
-    </a>
+      <div class="dropdown">
+
+        <a href="dengke.html">
+          DENGKE
+        </a>
+
+      </div>
+
+    </div>
 
 
-    <a href="contact.html">
-      CONTACT
-    </a>
+    <!-- ABOUT -->
+
+    <div class="menu-item">
+
+      <a href="about.html">
+        ABOUT
+      </a>
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <div class="menu-item">
+
+      <a href="contact.html">
+        CONTACT
+      </a>
+
+    </div>
 
 
   </div>
@@ -328,7 +498,9 @@ nav {
       </span>
 
       <div class="contact-value">
+
         sxcfoto
+
       </div>
 
     </div>
@@ -346,11 +518,11 @@ nav {
       <div class="contact-value">
 
         <a
-          href="https://www.instagram.com/xiaochensun_tom"
+          href="https://www.instagram.com/davesun777"
           target="_blank"
           rel="noopener noreferrer"
         >
-          @xiaochensun_tom
+          @davesun777
         </a>
 
       </div>
@@ -362,6 +534,60 @@ nav {
 
 
 </main>
+
+
+
+<script>
+
+/* =========================
+   PROJECTS MENU
+   ========================= */
+
+const projectsButton =
+  document.getElementById(
+    "projectsButton"
+  );
+
+const projectsMenu =
+  document.getElementById(
+    "projectsMenu"
+  );
+
+
+projectsButton.addEventListener(
+  "click",
+  function(event) {
+
+    event.stopPropagation();
+
+    projectsMenu.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+/* Close menu when clicking elsewhere */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      !projectsMenu.contains(event.target)
+    ) {
+
+      projectsMenu.classList.remove(
+        "open"
+      );
+
+    }
+
+  }
+);
+
+</script>
 
 
 </body>
