@@ -50,45 +50,7 @@ body {
 
 
 /* =========================
-   HOME IMAGE
-   ========================= */
-
-.hero {
-
-  position: fixed;
-
-  inset: 0;
-
-  width: 100vw;
-
-  height: 100vh;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #000;
-
-}
-
-
-.hero img {
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: contain;
-
-  display: block;
-
-}
-
-
-/* =========================
-   NAVIGATION
+   TOP BLACK NAVIGATION AREA
    ========================= */
 
 nav {
@@ -96,18 +58,24 @@ nav {
   position: fixed;
 
   top: 0;
-
   left: 0;
 
   width: 100%;
 
-  padding: 28px 40px;
+  height: 76px;
+
+  padding:
+    28px 40px;
+
+  background: #000;
 
   display: flex;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
-  align-items: flex-start;
+  align-items:
+    flex-start;
 
   z-index: 100;
 
@@ -141,7 +109,8 @@ nav {
 
   display: flex;
 
-  align-items: flex-start;
+  align-items:
+    flex-start;
 
   gap: 30px;
 
@@ -193,6 +162,8 @@ nav {
 
   padding-top: 10px;
 
+  background: #000;
+
   opacity: 0;
 
   visibility: hidden;
@@ -228,7 +199,8 @@ nav {
 
   display: block;
 
-  padding: 6px 0;
+  padding:
+    6px 0;
 
   text-align: right;
 
@@ -253,6 +225,44 @@ nav {
 
 
 /* =========================
+   FULLSCREEN IMAGE
+   ========================= */
+
+.hero {
+
+  position: fixed;
+
+  top: 76px;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  overflow: hidden;
+
+  background: #000;
+
+}
+
+
+.hero img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+}
+
+
+/* =========================
    MOBILE
    ========================= */
 
@@ -260,9 +270,10 @@ nav {
 
   nav {
 
+    height: 62px;
+
     padding:
-      22px
-      20px;
+      22px 20px;
 
   }
 
@@ -303,6 +314,13 @@ nav {
 
   }
 
+
+  .hero {
+
+    top: 62px;
+
+  }
+
 }
 
 </style>
@@ -311,21 +329,6 @@ nav {
 
 
 <body>
-
-
-<!-- =========================
-     HOME IMAGE
-     ========================= -->
-
-<div class="hero">
-
-  <img
-    src="Home.JPG"
-    alt="XIAOCHEN SUN"
-  >
-
-</div>
-
 
 
 <!-- =========================
@@ -345,8 +348,7 @@ nav {
   </a>
 
 
-
-  <!-- RIGHT MENU -->
+  <!-- MENU -->
 
   <div class="menu">
 
@@ -373,7 +375,6 @@ nav {
     </div>
 
 
-
     <!-- ABOUT -->
 
     <div class="menu-item">
@@ -383,7 +384,6 @@ nav {
       </a>
 
     </div>
-
 
 
     <!-- CONTACT -->
@@ -400,6 +400,21 @@ nav {
   </div>
 
 </nav>
+
+
+
+<!-- =========================
+     HOME IMAGE
+     ========================= -->
+
+<div class="hero">
+
+  <img
+    src="Home.JPG"
+    alt="XIAOCHEN SUN"
+  >
+
+</div>
 
 
 </body>
