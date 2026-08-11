@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>TOM SUN</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>XIAOCHEN SUN</title>
+
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
 
     html,
     body {
@@ -19,102 +28,334 @@
       height: 100%;
     }
 
+
     body {
       background: #111;
       color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       overflow: hidden;
     }
+
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
     nav {
+
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
+
       padding: 28px 40px;
+
       display: flex;
+
       justify-content: space-between;
-      align-items: center;
-      z-index: 10;
+
+      align-items: flex-start;
+
+      z-index: 100;
     }
+
 
     .logo {
+
       font-size: 16px;
+
       font-weight: 600;
+
       letter-spacing: 2px;
     }
+
 
     .menu {
+
       display: flex;
+
       gap: 30px;
+
       font-size: 11px;
+
       letter-spacing: 2px;
     }
 
-    .menu a {
-      transition: opacity 0.3s ease;
+
+    .menu > a,
+    .projects-link {
+
+      transition:
+        opacity 0.3s ease;
     }
 
-    .menu a:hover {
+
+    .menu > a:hover,
+    .projects-link:hover {
+
       opacity: 0.5;
     }
 
+
+    /* =========================
+       PROJECTS DROPDOWN
+       ========================= */
+
+    .projects-menu {
+
+      position: relative;
+    }
+
+
+    .projects-link {
+
+      cursor: pointer;
+    }
+
+
+    .dropdown {
+
+      position: absolute;
+
+      top: 22px;
+
+      right: 0;
+
+      min-width: 190px;
+
+      padding-top: 18px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 14px;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transform: translateY(-6px);
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+    }
+
+
+    .projects-menu:hover .dropdown {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+
+
+    .dropdown a {
+
+      display: block;
+
+      text-align: right;
+
+      font-size: 10px;
+
+      letter-spacing: 1.5px;
+
+      white-space: nowrap;
+
+      transition:
+        opacity 0.25s ease;
+    }
+
+
+    .dropdown a:hover {
+
+      opacity: 0.5;
+    }
+
+
+    /* =========================
+       HOMEPAGE IMAGE
+       ========================= */
+
     .hero {
+
       width: 100%;
+
       height: 100vh;
+
       background:
+
         linear-gradient(
           to bottom,
           rgba(0, 0, 0, 0.05),
           rgba(0, 0, 0, 0.2)
         ),
-        url("https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=2400&q=90")
+
+        url(
+          "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=2400&q=90"
+        )
+
         center center / cover no-repeat;
     }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
 
     @media (max-width: 700px) {
 
       nav {
-        padding: 22px 20px;
+
+        padding:
+          22px
+          20px;
       }
 
-      .menu {
-        gap: 15px;
-      }
 
       .logo {
+
         font-size: 14px;
       }
 
+
       .menu {
+
+        gap: 15px;
+
         font-size: 9px;
       }
+
+
+      .dropdown {
+
+        min-width: 160px;
+
+        padding-top: 16px;
+
+        gap: 12px;
+      }
+
+
+      .dropdown a {
+
+        font-size: 9px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
   <nav>
 
-    <a href="index.html" class="logo">
-      TOM SUN
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+      XIAOCHEN SUN
     </a>
 
+
     <div class="menu">
-      <a href="projects.html">PROJECTS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
+
+
+      <!-- PROJECTS -->
+
+      <div class="projects-menu">
+
+
+        <a
+          href="#"
+          class="projects-link"
+        >
+          PROJECTS
+        </a>
+
+
+        <div class="dropdown">
+
+
+          <a href="dengke.html">
+            DENGKE
+          </a>
+
+
+          <a href="tibetan-plateau.html">
+            TIBETAN PLATEAU
+          </a>
+
+
+          <a href="china.html">
+            CHINA
+          </a>
+
+
+          <a href="people.html">
+            PEOPLE
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ABOUT -->
+
+      <a href="about.html">
+        ABOUT
+      </a>
+
+
+      <!-- CONTACT -->
+
+      <a href="contact.html">
+        CONTACT
+      </a>
+
+
     </div>
+
 
   </nav>
 
+
+  <!-- =========================
+       HERO
+       ========================= -->
+
   <main class="hero"></main>
 
+
 </body>
+
 </html>
