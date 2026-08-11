@@ -3,724 +3,836 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
-  <title>Dengke — XIAOCHEN SUN</title>
+<title>Dengke — XIAOCHEN SUN</title>
 
 
-  <style>
+<style>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* =========================
+   BASIC
+   ========================= */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
+body {
+  background: #111;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    body {
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-      background: #111;
 
-      color: #fff;
+/* =========================
+   NAVIGATION
+   ========================= */
 
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-    }
+nav {
 
+  position: fixed;
 
-    a {
+  top: 0;
+  left: 0;
 
-      color: inherit;
+  width: 100%;
 
-      text-decoration: none;
-    }
+  padding: 28px 40px;
 
+  display: flex;
 
-    /* =========================
-       NAVIGATION
-       ========================= */
+  justify-content: space-between;
 
-    nav {
+  align-items: flex-start;
 
-      position: fixed;
+  z-index: 100;
 
-      top: 0;
-      left: 0;
+}
 
-      width: 100%;
 
-      padding: 28px 40px;
+.logo {
 
-      display: flex;
+  font-size: 16px;
 
-      justify-content: space-between;
+  font-weight: 600;
 
-      align-items: flex-start;
+  letter-spacing: 2px;
 
-      z-index: 100;
-    }
+}
 
 
-    .logo {
+.menu {
 
-      font-size: 16px;
+  display: flex;
 
-      font-weight: 600;
+  gap: 30px;
 
-      letter-spacing: 2px;
-    }
+  font-size: 11px;
 
+  letter-spacing: 2px;
 
-    .menu {
+}
 
-      display: flex;
 
-      gap: 30px;
+.menu a {
 
-      font-size: 11px;
+  transition: opacity 0.3s ease;
 
-      letter-spacing: 2px;
-    }
+}
 
 
-    .menu a {
+.menu a:hover {
 
-      transition:
-        opacity 0.3s ease;
-    }
+  opacity: 0.5;
 
+}
 
-    .menu a:hover {
 
-      opacity: 0.5;
-    }
+/* =========================
+   PROJECT INTRODUCTION
+   ========================= */
 
+.project-intro {
 
-    /* =========================
-       PROJECT INTRODUCTION
-       ========================= */
+  width: 100%;
 
-    .project-intro {
+  padding:
 
-      width: 100%;
+    125px
+    40px
+    50px;
 
-      padding:
+  text-align: left;
 
-        125px
-        40px
-        55px;
+}
 
-      text-align: left;
-    }
 
+.project-intro h1 {
 
-    .project-intro h1 {
+  font-size: 22px;
 
-      font-size: 22px;
+  font-weight: 500;
 
-      font-weight: 500;
+  letter-spacing: 1px;
 
-      letter-spacing: 1px;
+  margin-bottom: 20px;
 
-      margin-bottom: 20px;
-    }
+}
 
 
-    .project-intro p {
+.project-intro p {
 
-      max-width: 560px;
+  max-width: 560px;
 
-      font-size: 13px;
+  font-size: 13px;
 
-      line-height: 1.7;
+  line-height: 1.7;
 
-      color: #999;
-    }
+  color: #999;
 
+}
 
-    /* =========================
-       COMPACT IRREGULAR GRID
-       ========================= */
 
-    .gallery {
+/* =========================
+   PHOTO GRID
+   ========================= */
 
-      width: 100%;
+.gallery {
 
-      padding:
+  width: 100%;
 
-        0
-        24px
-        80px;
+  padding:
 
-      display: grid;
+    0
+    24px
+    80px;
 
-      grid-template-columns:
-        repeat(12, 1fr);
+  display: grid;
 
-      gap: 10px;
-    }
+  grid-template-columns:
+    repeat(12, 1fr);
 
+  gap: 10px;
 
-    .photo {
+}
 
-      overflow: hidden;
 
-      background: #222;
+.photo {
 
-      min-width: 0;
-    }
+  overflow: hidden;
 
+  background: #222;
 
-    .photo img {
+  cursor: pointer;
 
-      width: 100%;
+}
 
-      height: 100%;
 
-      display: block;
+.photo img {
 
-      object-fit: cover;
+  width: 100%;
 
-      transition:
+  height: 100%;
 
-        transform 0.4s ease,
+  display: block;
 
-        opacity 0.4s ease;
-    }
+  object-fit: cover;
 
+  transition:
 
-    .photo:hover img {
+    transform 0.4s ease,
 
-      transform: scale(1.025);
+    opacity 0.4s ease;
 
-      opacity: 0.88;
-    }
+}
 
 
-    /* =========================
-       COMPACT PHOTO SIZES
-       ========================= */
+.photo:hover img {
 
-    .photo-1 {
+  transform: scale(1.025);
 
-      grid-column:
-        1 / 5;
+  opacity: 0.85;
 
-      aspect-ratio:
-        4 / 3;
-    }
+}
 
 
-    .photo-2 {
+/* =========================
+   IRREGULAR PHOTO POSITIONS
+   ========================= */
 
-      grid-column:
-        5 / 8;
+.photo-1 {
 
-      aspect-ratio:
-        3 / 4;
-    }
+  grid-column: 1 / 5;
 
+  aspect-ratio: 4 / 3;
 
-    .photo-3 {
+}
 
-      grid-column:
-        8 / 11;
 
-      aspect-ratio:
-        3 / 4;
+.photo-2 {
 
-      margin-top:
-        35px;
-    }
+  grid-column: 5 / 8;
 
+  aspect-ratio: 3 / 4;
 
-    .photo-4 {
+  margin-top: 35px;
 
-      grid-column:
-        11 / 13;
+}
 
-      aspect-ratio:
-        4 / 5;
 
-      margin-top:
-        15px;
-    }
+.photo-3 {
 
+  grid-column: 8 / 11;
 
-    .photo-5 {
+  aspect-ratio: 3 / 4;
 
-      grid-column:
-        1 / 4;
+  margin-top: 15px;
 
-      aspect-ratio:
-        3 / 4;
+}
 
-      margin-top:
-        10px;
-    }
 
+.photo-4 {
 
-    .photo-6 {
+  grid-column: 11 / 13;
 
-      grid-column:
-        4 / 8;
+  aspect-ratio: 4 / 5;
 
-      aspect-ratio:
-        4 / 3;
+  margin-top: 30px;
 
-      margin-top:
-        45px;
-    }
+}
 
 
-    .photo-7 {
+.photo-5 {
 
-      grid-column:
-        8 / 11;
+  grid-column: 1 / 4;
 
-      aspect-ratio:
-        4 / 3;
+  aspect-ratio: 3 / 4;
 
-      margin-top:
-        15px;
-    }
+  margin-top: 10px;
 
+}
 
-    .photo-8 {
 
-      grid-column:
-        11 / 13;
+.photo-6 {
 
-      aspect-ratio:
-        3 / 4;
+  grid-column: 4 / 8;
 
-      margin-top:
-        55px;
-    }
+  aspect-ratio: 4 / 3;
 
+  margin-top: 40px;
 
-    .photo-9 {
+}
 
-      grid-column:
-        2 / 5;
 
-      aspect-ratio:
-        4 / 3;
+.photo-7 {
 
-      margin-top:
-        20px;
-    }
+  grid-column: 8 / 11;
 
+  aspect-ratio: 4 / 3;
 
-    .photo-10 {
+  margin-top: 10px;
 
-      grid-column:
-        5 / 9;
+}
 
-      aspect-ratio:
-        3 / 4;
 
-      margin-top:
-        60px;
-    }
+.photo-8 {
 
+  grid-column: 11 / 13;
 
-    .photo-11 {
+  aspect-ratio: 3 / 4;
 
-      grid-column:
-        9 / 13;
+  margin-top: 45px;
 
-      aspect-ratio:
-        4 / 3;
+}
 
-      margin-top:
-        10px;
-    }
 
+.photo-9 {
 
-    .photo-12 {
+  grid-column: 2 / 5;
 
-      grid-column:
-        1 / 4;
+  aspect-ratio: 4 / 3;
 
-      aspect-ratio:
-        4 / 3;
+  margin-top: 20px;
 
-      margin-top:
-        30px;
-    }
+}
 
 
-    .photo-13 {
+.photo-10 {
 
-      grid-column:
-        4 / 7;
+  grid-column: 5 / 9;
 
-      aspect-ratio:
-        3 / 4;
+  aspect-ratio: 3 / 4;
 
-      margin-top:
-        5px;
-    }
+  margin-top: 45px;
 
+}
 
-    .photo-14 {
 
-      grid-column:
-        7 / 10;
+.photo-11 {
 
-      aspect-ratio:
-        4 / 3;
+  grid-column: 9 / 13;
 
-      margin-top:
-        45px;
-    }
+  aspect-ratio: 4 / 3;
 
+  margin-top: 10px;
 
-    .photo-15 {
+}
 
-      grid-column:
-        10 / 13;
 
-      aspect-ratio:
-        3 / 4;
+.photo-12 {
 
-      margin-top:
-        15px;
-    }
+  grid-column: 1 / 4;
 
+  aspect-ratio: 4 / 3;
 
-    .photo-16 {
+  margin-top: 25px;
 
-      grid-column:
-        1 / 5;
+}
 
-      aspect-ratio:
-        4 / 3;
 
-      margin-top:
-        35px;
-    }
+.photo-13 {
 
+  grid-column: 4 / 7;
 
-    .photo-17 {
+  aspect-ratio: 3 / 4;
 
-      grid-column:
-        5 / 8;
+  margin-top: 5px;
 
-      aspect-ratio:
-        3 / 4;
+}
 
-      margin-top:
-        10px;
-    }
 
+.photo-14 {
 
-    .photo-18 {
+  grid-column: 7 / 10;
 
-      grid-column:
-        8 / 11;
+  aspect-ratio: 4 / 3;
 
-      aspect-ratio:
-        4 / 3;
+  margin-top: 35px;
 
-      margin-top:
-        50px;
-    }
+}
 
 
-    .photo-19 {
+.photo-15 {
 
-      grid-column:
-        11 / 13;
+  grid-column: 10 / 13;
 
-      aspect-ratio:
-        3 / 4;
+  aspect-ratio: 3 / 4;
 
-      margin-top:
-        20px;
-    }
+  margin-top: 10px;
 
+}
 
-    .photo-20 {
 
-      grid-column:
-        3 / 7;
+.photo-16 {
 
-      aspect-ratio:
-        4 / 3;
+  grid-column: 1 / 5;
 
-      margin-top:
-        40px;
-    }
+  aspect-ratio: 4 / 3;
 
+  margin-top: 30px;
 
-    /* =========================
-       MOBILE
-       ========================= */
+}
 
-    @media (max-width: 700px) {
 
+.photo-17 {
 
-      nav {
+  grid-column: 5 / 8;
 
-        padding:
-          22px
-          20px;
-      }
+  aspect-ratio: 3 / 4;
 
+  margin-top: 5px;
 
-      .logo {
+}
 
-        font-size: 14px;
-      }
 
+.photo-18 {
 
-      .menu {
+  grid-column: 8 / 11;
 
-        gap: 15px;
+  aspect-ratio: 4 / 3;
 
-        font-size: 9px;
-      }
+  margin-top: 35px;
 
+}
 
-      .project-intro {
 
-        padding:
+.photo-19 {
 
-          110px
-          20px
-          50px;
-      }
+  grid-column: 11 / 13;
 
+  aspect-ratio: 3 / 4;
 
-      .project-intro h1 {
+  margin-top: 10px;
 
-        font-size: 20px;
+}
 
-        margin-bottom:
-          18px;
-      }
 
+.photo-20 {
 
-      .project-intro p {
+  grid-column: 3 / 7;
 
-        font-size: 13px;
+  aspect-ratio: 4 / 3;
 
-        max-width:
-          100%;
-      }
+  margin-top: 30px;
 
+}
 
-      .gallery {
 
-        padding:
+/* =========================
+   LIGHTBOX
+   ========================= */
 
-          0
-          10px
-          60px;
+.lightbox {
 
-        grid-template-columns:
-          repeat(6, 1fr);
+  position: fixed;
 
-        gap: 6px;
-      }
+  inset: 0;
 
+  background: rgba(0, 0, 0, 0.96);
 
-      .photo-1 {
+  display: none;
 
-        grid-column:
-          1 / 4;
+  align-items: center;
 
-        margin-top: 0;
-      }
+  justify-content: center;
 
+  z-index: 1000;
 
-      .photo-2 {
+}
 
-        grid-column:
-          4 / 7;
 
-        margin-top: 20px;
-      }
+.lightbox.active {
 
+  display: flex;
 
-      .photo-3 {
+}
 
-        grid-column:
-          1 / 3;
 
-        margin-top: 10px;
-      }
+.lightbox-image {
 
+  max-width: 90vw;
 
-      .photo-4 {
+  max-height: 90vh;
 
-        grid-column:
-          3 / 5;
+  width: auto;
 
-        margin-top: 30px;
-      }
+  height: auto;
 
+  object-fit: contain;
 
-      .photo-5 {
+}
 
-        grid-column:
-          5 / 7;
 
-        margin-top: 5px;
-      }
+.close {
 
+  position: absolute;
 
-      .photo-6 {
+  top: 25px;
 
-        grid-column:
-          1 / 4;
+  right: 35px;
 
-        margin-top: 20px;
-      }
+  font-size: 32px;
 
+  font-weight: 300;
 
-      .photo-7 {
+  cursor: pointer;
 
-        grid-column:
-          4 / 7;
+  color: #fff;
 
-        margin-top: 5px;
-      }
+}
 
 
-      .photo-8 {
+.prev,
+.next {
 
-        grid-column:
-          1 / 3;
+  position: absolute;
 
-        margin-top: 25px;
-      }
+  top: 50%;
 
+  transform: translateY(-50%);
 
-      .photo-9 {
+  font-size: 35px;
 
-        grid-column:
-          3 / 5;
+  font-weight: 300;
 
-        margin-top: 10px;
-      }
+  cursor: pointer;
 
+  padding: 30px;
 
-      .photo-10 {
+  color: #fff;
 
-        grid-column:
-          5 / 7;
+  user-select: none;
 
-        margin-top: 30px;
-      }
+}
 
 
-      .photo-11 {
+.prev {
 
-        grid-column:
-          1 / 4;
+  left: 10px;
 
-        margin-top: 15px;
-      }
+}
 
 
-      .photo-12 {
+.next {
 
-        grid-column:
-          4 / 7;
+  right: 10px;
 
-        margin-top: 5px;
-      }
+}
 
 
-      .photo-13 {
+.prev:hover,
+.next:hover,
+.close:hover {
 
-        grid-column:
-          1 / 3;
+  opacity: 0.5;
 
-        margin-top: 25px;
-      }
+}
 
 
-      .photo-14 {
+/* =========================
+   MOBILE
+   ========================= */
 
-        grid-column:
-          3 / 5;
+@media (max-width: 700px) {
 
-        margin-top: 5px;
-      }
 
+  nav {
 
-      .photo-15 {
+    padding:
 
-        grid-column:
-          5 / 7;
+      22px
+      20px;
 
-        margin-top: 30px;
-      }
+  }
 
 
-      .photo-16 {
+  .logo {
 
-        grid-column:
-          1 / 4;
+    font-size: 14px;
 
-        margin-top: 10px;
-      }
+  }
 
 
-      .photo-17 {
+  .menu {
 
-        grid-column:
-          4 / 7;
+    gap: 15px;
 
-        margin-top: 25px;
-      }
+    font-size: 9px;
 
+  }
 
-      .photo-18 {
 
-        grid-column:
-          1 / 3;
+  .project-intro {
 
-        margin-top: 5px;
-      }
+    padding:
 
+      110px
+      20px
+      45px;
 
-      .photo-19 {
+  }
 
-        grid-column:
-          3 / 5;
 
-        margin-top: 20px;
-      }
+  .project-intro h1 {
 
+    font-size: 20px;
 
-      .photo-20 {
+  }
 
-        grid-column:
-          5 / 7;
 
-        margin-top: 5px;
-      }
+  .project-intro p {
 
-    }
+    font-size: 13px;
 
-  </style>
+  }
+
+
+  .gallery {
+
+    padding:
+
+      0
+      10px
+      60px;
+
+    grid-template-columns:
+
+      repeat(6, 1fr);
+
+    gap: 6px;
+
+  }
+
+
+  .photo-1 {
+
+    grid-column: 1 / 4;
+
+    margin-top: 0;
+
+  }
+
+
+  .photo-2 {
+
+    grid-column: 4 / 7;
+
+    margin-top: 20px;
+
+  }
+
+
+  .photo-3 {
+
+    grid-column: 1 / 3;
+
+    margin-top: 10px;
+
+  }
+
+
+  .photo-4 {
+
+    grid-column: 3 / 5;
+
+    margin-top: 25px;
+
+  }
+
+
+  .photo-5 {
+
+    grid-column: 5 / 7;
+
+    margin-top: 5px;
+
+  }
+
+
+  .photo-6 {
+
+    grid-column: 1 / 4;
+
+    margin-top: 20px;
+
+  }
+
+
+  .photo-7 {
+
+    grid-column: 4 / 7;
+
+    margin-top: 5px;
+
+  }
+
+
+  .photo-8 {
+
+    grid-column: 1 / 3;
+
+    margin-top: 25px;
+
+  }
+
+
+  .photo-9 {
+
+    grid-column: 3 / 5;
+
+    margin-top: 5px;
+
+  }
+
+
+  .photo-10 {
+
+    grid-column: 5 / 7;
+
+    margin-top: 25px;
+
+  }
+
+
+  .photo-11 {
+
+    grid-column: 1 / 4;
+
+    margin-top: 10px;
+
+  }
+
+
+  .photo-12 {
+
+    grid-column: 4 / 7;
+
+    margin-top: 5px;
+
+  }
+
+
+  .photo-13 {
+
+    grid-column: 1 / 3;
+
+    margin-top: 20px;
+
+  }
+
+
+  .photo-14 {
+
+    grid-column: 3 / 5;
+
+    margin-top: 5px;
+
+  }
+
+
+  .photo-15 {
+
+    grid-column: 5 / 7;
+
+    margin-top: 25px;
+
+  }
+
+
+  .photo-16 {
+
+    grid-column: 1 / 4;
+
+    margin-top: 10px;
+
+  }
+
+
+  .photo-17 {
+
+    grid-column: 4 / 7;
+
+    margin-top: 20px;
+
+  }
+
+
+  .photo-18 {
+
+    grid-column: 1 / 3;
+
+    margin-top: 5px;
+
+  }
+
+
+  .photo-19 {
+
+    grid-column: 3 / 5;
+
+    margin-top: 20px;
+
+  }
+
+
+  .photo-20 {
+
+    grid-column: 5 / 7;
+
+    margin-top: 5px;
+
+  }
+
+
+  .lightbox-image {
+
+    max-width: 94vw;
+
+    max-height: 85vh;
+
+  }
+
+
+  .close {
+
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 28px;
+
+  }
+
+
+  .prev,
+  .next {
+
+    font-size: 28px;
+
+    padding: 15px;
+
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -728,181 +840,466 @@
 <body>
 
 
-  <!-- =========================
-       NAVIGATION
-       ========================= -->
+<!-- =========================
+     NAVIGATION
+     ========================= -->
 
-  <nav>
+<nav>
 
 
-    <a
-      href="index.html"
-      class="logo"
-    >
-      XIAOCHEN SUN
+  <a
+    href="index.html"
+    class="logo"
+  >
+    XIAOCHEN SUN
+  </a>
+
+
+  <div class="menu">
+
+    <a href="index.html">
+      HOME
     </a>
 
+    <a href="projects.html">
+      PROJECTS
+    </a>
 
-    <div class="menu">
+    <a href="about.html">
+      ABOUT
+    </a>
 
-      <a href="index.html">
-        HOME
-      </a>
+    <a href="contact.html">
+      CONTACT
+    </a>
 
-      <a href="projects.html">
-        PROJECTS
-      </a>
+  </div>
 
-      <a href="about.html">
-        ABOUT
-      </a>
 
-      <a href="contact.html">
-        CONTACT
-      </a>
+</nav>
 
-    </div>
 
 
-  </nav>
+<!-- =========================
+     PROJECT INTRODUCTION
+     ========================= -->
 
+<section class="project-intro">
 
-  <!-- =========================
-       PROJECT INTRODUCTION
-       ========================= -->
 
-  <section class="project-intro">
+  <h1>
+    Dengke
+  </h1>
 
 
-    <h1>
-      Dengke
-    </h1>
+  <p>
 
+    Dengke is a small community on the Tibetan Plateau
+    in western Sichuan, China.
 
-    <p>
+    <br><br>
 
-      Dengke is a small community on the Tibetan Plateau
-      in western Sichuan, China.
+    This project documents the people, landscape and
+    everyday life I encountered there in 2026.
 
-      <br><br>
+  </p>
 
-      This project documents the people, landscape and
-      everyday life I encountered there in 2026.
 
-    </p>
+</section>
 
 
-  </section>
 
+<!-- =========================
+     PHOTO GRID
+     ========================= -->
 
-  <!-- =========================
-       PHOTOGRAPHS
-       ========================= -->
+<main class="gallery">
 
-  <main class="gallery">
 
+  <div class="photo photo-1">
+    <img src="DENGKE-01.JPG" alt="Dengke 01">
+  </div>
 
-    <div class="photo photo-1">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-2">
+    <img src="DENGKE-02.JPG" alt="Dengke 02">
+  </div>
 
-    <div class="photo photo-2">
-      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-3">
+    <img src="DENGKE-03.JPG" alt="Dengke 03">
+  </div>
 
-    <div class="photo photo-3">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-4">
+    <img src="DENGKE-04.JPG" alt="Dengke 04">
+  </div>
 
-    <div class="photo photo-4">
-      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-5">
+    <img src="DENGKE-05.JPG" alt="Dengke 05">
+  </div>
 
-    <div class="photo photo-5">
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-6">
+    <img src="DENGKE-06.JPG" alt="Dengke 06">
+  </div>
 
-    <div class="photo photo-6">
-      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-7">
+    <img src="DENGKE-07.JPG" alt="Dengke 07">
+  </div>
 
-    <div class="photo photo-7">
-      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-8">
+    <img src="DENGKE-08.JPG" alt="Dengke 08">
+  </div>
 
-    <div class="photo photo-8">
-      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-9">
+    <img src="DENGKE-09.JPG" alt="Dengke 09">
+  </div>
 
-    <div class="photo photo-9">
-      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-10">
+    <img src="DENGKE-10.JPG" alt="Dengke 10">
+  </div>
 
-    <div class="photo photo-10">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-11">
+    <img src="DENGKE-11.JPG" alt="Dengke 11">
+  </div>
 
-    <div class="photo photo-11">
-      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-12">
+    <img src="DENGKE-12.JPG" alt="Dengke 12">
+  </div>
 
-    <div class="photo photo-12">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-13">
+    <img src="DENGKE-13.JPG" alt="Dengke 13">
+  </div>
 
-    <div class="photo photo-13">
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-14">
+    <img src="DENGKE-14.JPG" alt="Dengke 14">
+  </div>
 
-    <div class="photo photo-14">
-      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-15">
+    <img src="DENGKE-15.JPG" alt="Dengke 15">
+  </div>
 
-    <div class="photo photo-15">
-      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-16">
+    <img src="DENGKE-16.JPG" alt="Dengke 16">
+  </div>
 
-    <div class="photo photo-16">
-      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-17">
+    <img src="DENGKE-17.JPG" alt="Dengke 17">
+  </div>
 
-    <div class="photo photo-17">
-      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-18">
+    <img src="DENGKE-18.JPG" alt="Dengke 18">
+  </div>
 
-    <div class="photo photo-18">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-19">
+    <img src="DENGKE-19.JPG" alt="Dengke 19">
+  </div>
 
-    <div class="photo photo-19">
-      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=700&q=85" alt="Dengke">
-    </div>
 
+  <div class="photo photo-20">
+    <img src="DENGKE-20.JPG" alt="Dengke 20">
+  </div>
 
-    <div class="photo photo-20">
-      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=85" alt="Dengke">
-    </div>
 
+</main>
 
-  </main>
+
+
+<!-- =========================
+     LIGHTBOX
+     ========================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+>
+
+
+  <span
+    class="close"
+    id="close"
+  >
+    ×
+  </span>
+
+
+  <span
+    class="prev"
+    id="prev"
+  >
+    ‹
+  </span>
+
+
+  <img
+    class="lightbox-image"
+    id="lightboxImage"
+    src=""
+    alt=""
+  >
+
+
+  <span
+    class="next"
+    id="next"
+  >
+    ›
+  </span>
+
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   LIGHTBOX
+   ========================= */
+
+const photos =
+  document.querySelectorAll(
+    ".photo img"
+  );
+
+const lightbox =
+  document.getElementById(
+    "lightbox"
+  );
+
+const lightboxImage =
+  document.getElementById(
+    "lightboxImage"
+  );
+
+const closeButton =
+  document.getElementById(
+    "close"
+  );
+
+const prevButton =
+  document.getElementById(
+    "prev"
+  );
+
+const nextButton =
+  document.getElementById(
+    "next"
+  );
+
+
+let currentIndex = 0;
+
+
+
+/* OPEN PHOTO */
+
+function openLightbox(index) {
+
+  currentIndex = index;
+
+  lightboxImage.src =
+    photos[currentIndex].src;
+
+  lightboxImage.alt =
+    photos[currentIndex].alt;
+
+  lightbox.classList.add(
+    "active"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+
+/* CLOSE PHOTO */
+
+function closeLightbox() {
+
+  lightbox.classList.remove(
+    "active"
+  );
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+
+/* NEXT PHOTO */
+
+function showNext() {
+
+  currentIndex++;
+
+  if (
+    currentIndex >= photos.length
+  ) {
+
+    currentIndex = 0;
+
+  }
+
+  lightboxImage.src =
+    photos[currentIndex].src;
+
+  lightboxImage.alt =
+    photos[currentIndex].alt;
+
+}
+
+
+
+/* PREVIOUS PHOTO */
+
+function showPrevious() {
+
+  currentIndex--;
+
+  if (
+    currentIndex < 0
+  ) {
+
+    currentIndex =
+      photos.length - 1;
+
+  }
+
+  lightboxImage.src =
+    photos[currentIndex].src;
+
+  lightboxImage.alt =
+    photos[currentIndex].alt;
+
+}
+
+
+
+/* CLICK THUMBNAIL */
+
+photos.forEach(
+  (photo, index) => {
+
+    photo.addEventListener(
+      "click",
+      () => {
+
+        openLightbox(index);
+
+      }
+    );
+
+  }
+);
+
+
+
+/* BUTTONS */
+
+closeButton.addEventListener(
+  "click",
+  closeLightbox
+);
+
+
+nextButton.addEventListener(
+  "click",
+  showNext
+);
+
+
+prevButton.addEventListener(
+  "click",
+  showPrevious
+);
+
+
+
+/* CLICK BACKGROUND TO CLOSE */
+
+lightbox.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target === lightbox
+    ) {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      !lightbox.classList.contains(
+        "active"
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeLightbox();
+
+    }
+
+
+    if (
+      event.key === "ArrowRight"
+    ) {
+
+      showNext();
+
+    }
+
+
+    if (
+      event.key === "ArrowLeft"
+    ) {
+
+      showPrevious();
+
+    }
+
+  }
+);
+
+</script>
 
 
 </body>
