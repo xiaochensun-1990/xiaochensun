@@ -5,19 +5,11 @@
 
 <meta charset="UTF-8">
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dengke — XIAOCHEN SUN</title>
 
-
 <style>
-
-/* =========================
-   BASIC
-   ========================= */
 
 * {
   box-sizing: border-box;
@@ -46,62 +38,40 @@ a {
    ========================= */
 
 nav {
-
   position: fixed;
-
   top: 0;
   left: 0;
-
   width: 100%;
 
   padding: 28px 40px;
 
   display: flex;
-
   justify-content: space-between;
-
   align-items: flex-start;
 
   z-index: 100;
-
 }
-
 
 .logo {
-
   font-size: 16px;
-
   font-weight: 600;
-
   letter-spacing: 2px;
-
 }
 
-
 .menu {
-
   display: flex;
-
   gap: 30px;
 
   font-size: 11px;
-
   letter-spacing: 2px;
-
 }
-
 
 .menu a {
-
   transition: opacity 0.3s ease;
-
 }
 
-
 .menu a:hover {
-
   opacity: 0.5;
-
 }
 
 
@@ -110,43 +80,28 @@ nav {
    ========================= */
 
 .project-intro {
-
   width: 100%;
 
-  padding:
-
-    125px
-    40px
-    50px;
+  padding: 125px 40px 45px;
 
   text-align: left;
-
 }
-
 
 .project-intro h1 {
-
   font-size: 22px;
-
   font-weight: 500;
-
   letter-spacing: 1px;
 
-  margin-bottom: 20px;
-
+  margin-bottom: 18px;
 }
 
-
 .project-intro p {
-
   max-width: 560px;
 
   font-size: 13px;
-
   line-height: 1.7;
 
   color: #999;
-
 }
 
 
@@ -158,30 +113,31 @@ nav {
 
   width: 100%;
 
-  padding:
-
-    0
-    24px
-    80px;
+  padding: 0 24px 80px;
 
   display: grid;
 
-  grid-template-columns:
-    repeat(12, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 
-  gap: 10px;
-
+  gap: 8px;
 }
 
 
+/* =========================
+   4:3 PHOTOS
+   ========================= */
+
 .photo {
+
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
 
   overflow: hidden;
 
   background: #222;
 
   cursor: pointer;
-
 }
 
 
@@ -193,245 +149,21 @@ nav {
 
   display: block;
 
-  object-fit: cover;
+  object-fit: contain;
+
+  background: #111;
 
   transition:
-
-    transform 0.4s ease,
-
-    opacity 0.4s ease;
-
+    transform 0.35s ease,
+    opacity 0.35s ease;
 }
 
 
 .photo:hover img {
 
-  transform: scale(1.025);
+  transform: scale(1.02);
 
-  opacity: 0.85;
-
-}
-
-
-/* =========================
-   IRREGULAR PHOTO POSITIONS
-   ========================= */
-
-.photo-1 {
-
-  grid-column: 1 / 5;
-
-  aspect-ratio: 4 / 3;
-
-}
-
-
-.photo-2 {
-
-  grid-column: 5 / 8;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 35px;
-
-}
-
-
-.photo-3 {
-
-  grid-column: 8 / 11;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 15px;
-
-}
-
-
-.photo-4 {
-
-  grid-column: 11 / 13;
-
-  aspect-ratio: 4 / 5;
-
-  margin-top: 30px;
-
-}
-
-
-.photo-5 {
-
-  grid-column: 1 / 4;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 10px;
-
-}
-
-
-.photo-6 {
-
-  grid-column: 4 / 8;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 40px;
-
-}
-
-
-.photo-7 {
-
-  grid-column: 8 / 11;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 10px;
-
-}
-
-
-.photo-8 {
-
-  grid-column: 11 / 13;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 45px;
-
-}
-
-
-.photo-9 {
-
-  grid-column: 2 / 5;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 20px;
-
-}
-
-
-.photo-10 {
-
-  grid-column: 5 / 9;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 45px;
-
-}
-
-
-.photo-11 {
-
-  grid-column: 9 / 13;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 10px;
-
-}
-
-
-.photo-12 {
-
-  grid-column: 1 / 4;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 25px;
-
-}
-
-
-.photo-13 {
-
-  grid-column: 4 / 7;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 5px;
-
-}
-
-
-.photo-14 {
-
-  grid-column: 7 / 10;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 35px;
-
-}
-
-
-.photo-15 {
-
-  grid-column: 10 / 13;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 10px;
-
-}
-
-
-.photo-16 {
-
-  grid-column: 1 / 5;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 30px;
-
-}
-
-
-.photo-17 {
-
-  grid-column: 5 / 8;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 5px;
-
-}
-
-
-.photo-18 {
-
-  grid-column: 8 / 11;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 35px;
-
-}
-
-
-.photo-19 {
-
-  grid-column: 11 / 13;
-
-  aspect-ratio: 3 / 4;
-
-  margin-top: 10px;
-
-}
-
-
-.photo-20 {
-
-  grid-column: 3 / 7;
-
-  aspect-ratio: 4 / 3;
-
-  margin-top: 30px;
-
+  opacity: 0.88;
 }
 
 
@@ -445,7 +177,7 @@ nav {
 
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.96);
+  background: rgba(0,0,0,0.96);
 
   display: none;
 
@@ -454,14 +186,11 @@ nav {
   justify-content: center;
 
   z-index: 1000;
-
 }
 
 
 .lightbox.active {
-
   display: flex;
-
 }
 
 
@@ -476,28 +205,32 @@ nav {
   height: auto;
 
   object-fit: contain;
-
 }
 
+
+/* CLOSE */
 
 .close {
 
   position: absolute;
 
-  top: 25px;
+  top: 20px;
 
-  right: 35px;
+  right: 32px;
 
   font-size: 32px;
 
   font-weight: 300;
 
+  color: white;
+
   cursor: pointer;
 
-  color: #fff;
-
+  z-index: 1001;
 }
 
+
+/* PREVIOUS / NEXT */
 
 .prev,
 .next {
@@ -508,32 +241,29 @@ nav {
 
   transform: translateY(-50%);
 
-  font-size: 35px;
+  font-size: 36px;
 
   font-weight: 300;
+
+  color: white;
 
   cursor: pointer;
 
   padding: 30px;
 
-  color: #fff;
-
   user-select: none;
 
+  z-index: 1001;
 }
 
 
 .prev {
-
-  left: 10px;
-
+  left: 5px;
 }
 
 
 .next {
-
-  right: 10px;
-
+  right: 5px;
 }
 
 
@@ -542,7 +272,6 @@ nav {
 .close:hover {
 
   opacity: 0.5;
-
 }
 
 
@@ -550,23 +279,17 @@ nav {
    MOBILE
    ========================= */
 
-@media (max-width: 700px) {
-
+@media (max-width: 800px) {
 
   nav {
 
-    padding:
-
-      22px
-      20px;
-
+    padding: 22px 20px;
   }
 
 
   .logo {
 
     font-size: 14px;
-
   }
 
 
@@ -575,7 +298,6 @@ nav {
     gap: 15px;
 
     font-size: 9px;
-
   }
 
 
@@ -583,24 +305,21 @@ nav {
 
     padding:
 
-      110px
+      105px
       20px
-      45px;
-
+      40px;
   }
 
 
   .project-intro h1 {
 
     font-size: 20px;
-
   }
 
 
   .project-intro p {
 
     font-size: 13px;
-
   }
 
 
@@ -610,194 +329,13 @@ nav {
 
       0
       10px
-      60px;
+      50px;
 
     grid-template-columns:
 
-      repeat(6, 1fr);
+      repeat(2, 1fr);
 
     gap: 6px;
-
-  }
-
-
-  .photo-1 {
-
-    grid-column: 1 / 4;
-
-    margin-top: 0;
-
-  }
-
-
-  .photo-2 {
-
-    grid-column: 4 / 7;
-
-    margin-top: 20px;
-
-  }
-
-
-  .photo-3 {
-
-    grid-column: 1 / 3;
-
-    margin-top: 10px;
-
-  }
-
-
-  .photo-4 {
-
-    grid-column: 3 / 5;
-
-    margin-top: 25px;
-
-  }
-
-
-  .photo-5 {
-
-    grid-column: 5 / 7;
-
-    margin-top: 5px;
-
-  }
-
-
-  .photo-6 {
-
-    grid-column: 1 / 4;
-
-    margin-top: 20px;
-
-  }
-
-
-  .photo-7 {
-
-    grid-column: 4 / 7;
-
-    margin-top: 5px;
-
-  }
-
-
-  .photo-8 {
-
-    grid-column: 1 / 3;
-
-    margin-top: 25px;
-
-  }
-
-
-  .photo-9 {
-
-    grid-column: 3 / 5;
-
-    margin-top: 5px;
-
-  }
-
-
-  .photo-10 {
-
-    grid-column: 5 / 7;
-
-    margin-top: 25px;
-
-  }
-
-
-  .photo-11 {
-
-    grid-column: 1 / 4;
-
-    margin-top: 10px;
-
-  }
-
-
-  .photo-12 {
-
-    grid-column: 4 / 7;
-
-    margin-top: 5px;
-
-  }
-
-
-  .photo-13 {
-
-    grid-column: 1 / 3;
-
-    margin-top: 20px;
-
-  }
-
-
-  .photo-14 {
-
-    grid-column: 3 / 5;
-
-    margin-top: 5px;
-
-  }
-
-
-  .photo-15 {
-
-    grid-column: 5 / 7;
-
-    margin-top: 25px;
-
-  }
-
-
-  .photo-16 {
-
-    grid-column: 1 / 4;
-
-    margin-top: 10px;
-
-  }
-
-
-  .photo-17 {
-
-    grid-column: 4 / 7;
-
-    margin-top: 20px;
-
-  }
-
-
-  .photo-18 {
-
-    grid-column: 1 / 3;
-
-    margin-top: 5px;
-
-  }
-
-
-  .photo-19 {
-
-    grid-column: 3 / 5;
-
-    margin-top: 20px;
-
-  }
-
-
-  .photo-20 {
-
-    grid-column: 5 / 7;
-
-    margin-top: 5px;
-
   }
 
 
@@ -805,8 +343,7 @@ nav {
 
     max-width: 94vw;
 
-    max-height: 85vh;
-
+    max-height: 84vh;
   }
 
 
@@ -814,10 +351,9 @@ nav {
 
     top: 15px;
 
-    right: 20px;
+    right: 18px;
 
     font-size: 28px;
-
   }
 
 
@@ -827,7 +363,6 @@ nav {
     font-size: 28px;
 
     padding: 15px;
-
   }
 
 }
@@ -845,7 +380,6 @@ nav {
      ========================= -->
 
 <nav>
-
 
   <a
     href="index.html"
@@ -875,7 +409,6 @@ nav {
 
   </div>
 
-
 </nav>
 
 
@@ -885,7 +418,6 @@ nav {
      ========================= -->
 
 <section class="project-intro">
-
 
   <h1>
     Dengke
@@ -904,7 +436,6 @@ nav {
 
   </p>
 
-
 </section>
 
 
@@ -916,102 +447,102 @@ nav {
 <main class="gallery">
 
 
-  <div class="photo photo-1">
+  <div class="photo">
     <img src="DENGKE-01.JPG" alt="Dengke 01">
   </div>
 
 
-  <div class="photo photo-2">
+  <div class="photo">
     <img src="DENGKE-02.JPG" alt="Dengke 02">
   </div>
 
 
-  <div class="photo photo-3">
+  <div class="photo">
     <img src="DENGKE-03.JPG" alt="Dengke 03">
   </div>
 
 
-  <div class="photo photo-4">
+  <div class="photo">
     <img src="DENGKE-04.JPG" alt="Dengke 04">
   </div>
 
 
-  <div class="photo photo-5">
+  <div class="photo">
     <img src="DENGKE-05.JPG" alt="Dengke 05">
   </div>
 
 
-  <div class="photo photo-6">
+  <div class="photo">
     <img src="DENGKE-06.JPG" alt="Dengke 06">
   </div>
 
 
-  <div class="photo photo-7">
+  <div class="photo">
     <img src="DENGKE-07.JPG" alt="Dengke 07">
   </div>
 
 
-  <div class="photo photo-8">
+  <div class="photo">
     <img src="DENGKE-08.JPG" alt="Dengke 08">
   </div>
 
 
-  <div class="photo photo-9">
+  <div class="photo">
     <img src="DENGKE-09.JPG" alt="Dengke 09">
   </div>
 
 
-  <div class="photo photo-10">
+  <div class="photo">
     <img src="DENGKE-10.JPG" alt="Dengke 10">
   </div>
 
 
-  <div class="photo photo-11">
+  <div class="photo">
     <img src="DENGKE-11.JPG" alt="Dengke 11">
   </div>
 
 
-  <div class="photo photo-12">
+  <div class="photo">
     <img src="DENGKE-12.JPG" alt="Dengke 12">
   </div>
 
 
-  <div class="photo photo-13">
+  <div class="photo">
     <img src="DENGKE-13.JPG" alt="Dengke 13">
   </div>
 
 
-  <div class="photo photo-14">
+  <div class="photo">
     <img src="DENGKE-14.JPG" alt="Dengke 14">
   </div>
 
 
-  <div class="photo photo-15">
+  <div class="photo">
     <img src="DENGKE-15.JPG" alt="Dengke 15">
   </div>
 
 
-  <div class="photo photo-16">
+  <div class="photo">
     <img src="DENGKE-16.JPG" alt="Dengke 16">
   </div>
 
 
-  <div class="photo photo-17">
+  <div class="photo">
     <img src="DENGKE-17.JPG" alt="Dengke 17">
   </div>
 
 
-  <div class="photo photo-18">
+  <div class="photo">
     <img src="DENGKE-18.JPG" alt="Dengke 18">
   </div>
 
 
-  <div class="photo photo-19">
+  <div class="photo">
     <img src="DENGKE-19.JPG" alt="Dengke 19">
   </div>
 
 
-  <div class="photo photo-20">
+  <div class="photo">
     <img src="DENGKE-20.JPG" alt="Dengke 20">
   </div>
 
@@ -1077,25 +608,30 @@ const photos =
     ".photo img"
   );
 
+
 const lightbox =
   document.getElementById(
     "lightbox"
   );
+
 
 const lightboxImage =
   document.getElementById(
     "lightboxImage"
   );
 
+
 const closeButton =
   document.getElementById(
     "close"
   );
 
+
 const prevButton =
   document.getElementById(
     "prev"
   );
+
 
 const nextButton =
   document.getElementById(
@@ -1107,7 +643,7 @@ let currentIndex = 0;
 
 
 
-/* OPEN PHOTO */
+/* OPEN */
 
 function openLightbox(index) {
 
@@ -1130,7 +666,7 @@ function openLightbox(index) {
 
 
 
-/* CLOSE PHOTO */
+/* CLOSE */
 
 function closeLightbox() {
 
@@ -1145,7 +681,7 @@ function closeLightbox() {
 
 
 
-/* NEXT PHOTO */
+/* NEXT */
 
 function showNext() {
 
@@ -1169,7 +705,7 @@ function showNext() {
 
 
 
-/* PREVIOUS PHOTO */
+/* PREVIOUS */
 
 function showPrevious() {
 
@@ -1194,7 +730,7 @@ function showPrevious() {
 
 
 
-/* CLICK THUMBNAIL */
+/* THUMBNAILS */
 
 photos.forEach(
   (photo, index) => {
@@ -1234,7 +770,7 @@ prevButton.addEventListener(
 
 
 
-/* CLICK BACKGROUND TO CLOSE */
+/* BACKGROUND */
 
 lightbox.addEventListener(
   "click",
