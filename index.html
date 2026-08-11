@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>TOM SUN — Documentary Photographer</title>
+  <title>TOM SUN</title>
 
   <style>
     * {
@@ -13,18 +13,23 @@
       padding: 0;
     }
 
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
     body {
       background: #111;
-      color: #f5f5f5;
+      color: #fff;
       font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
     }
 
     a {
       color: inherit;
       text-decoration: none;
     }
-
-    /* Navigation */
 
     nav {
       position: fixed;
@@ -36,147 +41,41 @@
       justify-content: space-between;
       align-items: center;
       z-index: 10;
-      mix-blend-mode: difference;
     }
 
     .logo {
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 16px;
+      font-weight: 600;
       letter-spacing: 2px;
     }
 
     .menu {
       display: flex;
       gap: 30px;
-      font-size: 12px;
-      letter-spacing: 1.5px;
+      font-size: 11px;
+      letter-spacing: 2px;
     }
 
-    /* Hero */
+    .menu a {
+      transition: opacity 0.3s ease;
+    }
+
+    .menu a:hover {
+      opacity: 0.5;
+    }
 
     .hero {
+      width: 100%;
       height: 100vh;
-      min-height: 650px;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 60px 40px;
       background:
         linear-gradient(
           to bottom,
-          rgba(0,0,0,0.05),
-          rgba(0,0,0,0.75)
+          rgba(0, 0, 0, 0.05),
+          rgba(0, 0, 0, 0.2)
         ),
-        url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=2200&q=85")
+        url("https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=2400&q=90")
         center center / cover no-repeat;
     }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero h1 {
-      font-size: clamp(70px, 13vw, 190px);
-      line-height: 0.82;
-      letter-spacing: -7px;
-      font-weight: 700;
-    }
-
-    .hero p {
-      margin-top: 28px;
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    /* Introduction */
-
-    .intro {
-      min-height: 70vh;
-      padding: 150px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .intro-text {
-      max-width: 850px;
-      font-size: clamp(28px, 4vw, 58px);
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-    }
-
-    /* Projects */
-
-    .projects {
-      padding: 80px 40px 140px;
-    }
-
-    .section-title {
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 50px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .project {
-      display: block;
-    }
-
-    .project-image {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(100%);
-      transition: filter 0.5s ease;
-    }
-
-    .project:hover .project-image {
-      filter: grayscale(0%);
-    }
-
-    .project-info {
-      display: flex;
-      justify-content: space-between;
-      padding: 18px 0 50px;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    /* About */
-
-    .about {
-      padding: 140px 40px;
-      border-top: 1px solid #333;
-    }
-
-    .about-text {
-      max-width: 900px;
-      font-size: clamp(30px, 5vw, 70px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-    }
-
-    /* Footer */
-
-    footer {
-      padding: 80px 40px 40px;
-      border-top: 1px solid #333;
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* Mobile */
 
     @media (max-width: 700px) {
 
@@ -188,32 +87,12 @@
         gap: 15px;
       }
 
-      .hero {
-        padding: 30px 20px;
+      .logo {
+        font-size: 14px;
       }
 
-      .hero h1 {
-        font-size: 22vw;
-        letter-spacing: -4px;
-      }
-
-      .intro,
-      .projects,
-      .about {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      footer {
-        padding-left: 20px;
-        padding-right: 20px;
-        flex-direction: column;
-        gap: 20px;
+      .menu {
+        font-size: 9px;
       }
     }
   </style>
@@ -222,136 +101,20 @@
 <body>
 
   <nav>
-    <a href="#" class="logo">TOM SUN</a>
 
-    <div class="menu">
-      <a href="#projects">PROJECTS</a>
-      <a href="#about">ABOUT</a>
-      <a href="#contact">CONTACT</a>
-    </div>
-  </nav>
-
-
-  <section class="hero">
-
-    <div class="hero-content">
-      <h1>TOM SUN</h1>
-
-      <p>
-        Documentary Photographer
-      </p>
-    </div>
-
-  </section>
-
-
-  <section class="intro">
-
-    <div class="intro-text">
-      I photograph people, places and the quiet stories that exist between them.
-    </div>
-
-  </section>
-
-
-  <section class="projects" id="projects">
-
-    <div class="section-title">
-      Selected Projects
-    </div>
-
-    <div class="project-grid">
-
-      <a href="#" class="project">
-
-        <img
-          class="project-image"
-          src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=1600&q=85"
-          alt="Documentary photography"
-        >
-
-        <div class="project-info">
-          <span>DENGKE</span>
-          <span>2026</span>
-        </div>
-
-      </a>
-
-
-      <a href="#" class="project">
-
-        <img
-          class="project-image"
-          src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1600&q=85"
-          alt="Documentary photography"
-        >
-
-        <div class="project-info">
-          <span>THE PLATEAU</span>
-          <span>2026</span>
-        </div>
-
-      </a>
-
-
-      <a href="#" class="project">
-
-        <img
-          class="project-image"
-          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=85"
-          alt="Documentary photography"
-        >
-
-        <div class="project-info">
-          <span>PEOPLE</span>
-          <span>ONGOING</span>
-        </div>
-
-      </a>
-
-
-      <a href="#" class="project">
-
-        <img
-          class="project-image"
-          src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1600&q=85"
-          alt="Documentary photography"
-        >
-
-        <div class="project-info">
-          <span>CHINA</span>
-          <span>ONGOING</span>
-        </div>
-
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <section class="about" id="about">
-
-    <div class="section-title">
-      About
-    </div>
-
-    <div class="about-text">
-      TOM SUN is a documentary photographer based in China, working with people, communities and stories at the edges of everyday life.
-    </div>
-
-  </section>
-
-
-  <footer id="contact">
-
-    <span>© 2026 TOM SUN</span>
-
-    <a href="mailto:xiaochensun1990@gmail.com">
-      CONTACT
+    <a href="index.html" class="logo">
+      TOM SUN
     </a>
 
-  </footer>
+    <div class="menu">
+      <a href="projects.html">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+
+  </nav>
+
+  <main class="hero"></main>
 
 </body>
 </html>
