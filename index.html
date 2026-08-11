@@ -15,10 +15,6 @@
 
 <style>
 
-/* =========================
-   BASIC
-   ========================= */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -47,11 +43,6 @@ body {
   overflow: hidden;
 
 }
-
-
-/* =========================
-   TOP BLACK NAVIGATION AREA
-   ========================= */
 
 nav {
 
@@ -102,7 +93,7 @@ nav {
 
 
 /* =========================
-   RIGHT MENU
+   MENU
    ========================= */
 
 .menu {
@@ -124,7 +115,13 @@ nav {
 }
 
 
-.menu-item > a {
+.menu-item > a,
+.projects-button {
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
   font-size: 11px;
 
@@ -136,10 +133,19 @@ nav {
 
   white-space: nowrap;
 
+  background: none;
+
+  border: none;
+
+  padding: 0;
+
+  cursor: pointer;
+
 }
 
 
-.menu-item > a:hover {
+.menu-item > a:hover,
+.projects-button:hover {
 
   opacity: 0.55;
 
@@ -158,7 +164,7 @@ nav {
 
   right: 0;
 
-  min-width: 140px;
+  min-width: 120px;
 
   padding-top: 10px;
 
@@ -172,18 +178,30 @@ nav {
     translateY(-5px);
 
   transition:
-
     opacity 0.25s ease,
-
     transform 0.25s ease,
-
     visibility 0.25s ease;
 
 }
 
 
-.menu-item.projects:hover
-.dropdown {
+/* Desktop hover */
+
+.projects:hover .dropdown {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* JavaScript click */
+
+.projects.open .dropdown {
 
   opacity: 1;
 
@@ -225,7 +243,7 @@ nav {
 
 
 /* =========================
-   FULLSCREEN IMAGE
+   HOME IMAGE
    ========================= */
 
 .hero {
@@ -292,7 +310,8 @@ nav {
   }
 
 
-  .menu-item > a {
+  .menu-item > a,
+  .projects-button {
 
     font-size: 9px;
 
@@ -338,8 +357,6 @@ nav {
 <nav>
 
 
-  <!-- LOGO -->
-
   <a
     href="index.html"
     class="logo"
@@ -348,8 +365,6 @@ nav {
   </a>
 
 
-  <!-- MENU -->
-
   <div class="menu">
 
 
@@ -357,11 +372,16 @@ nav {
 
     <div
       class="menu-item projects"
+      id="projectsMenu"
     >
 
-      <a href="projects.html">
+      <button
+        class="projects-button"
+        id="projectsButton"
+        type="button"
+      >
         PROJECTS
-      </a>
+      </button>
 
 
       <div class="dropdown">
@@ -411,10 +431,64 @@ nav {
 
   <img
     src="Home.JPG"
-    alt="XIAOCHEN SUN"
+    alt="Xiaochen Sun"
   >
 
 </div>
+
+
+
+<script>
+
+/* =========================
+   PROJECTS MENU
+   ========================= */
+
+const projectsButton =
+  document.getElementById(
+    "projectsButton"
+  );
+
+const projectsMenu =
+  document.getElementById(
+    "projectsMenu"
+  );
+
+
+projectsButton.addEventListener(
+  "click",
+  function(event) {
+
+    event.stopPropagation();
+
+    projectsMenu.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+/* Close menu when clicking elsewhere */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      !projectsMenu.contains(event.target)
+    ) {
+
+      projectsMenu.classList.remove(
+        "open"
+      );
+
+    }
+
+  }
+);
+
+</script>
 
 
 </body>
