@@ -109,194 +109,118 @@
 
 
     /* =========================
-       PROJECT HEADER
-       ========================= */
-
-    .project-header {
-
-      padding:
-
-        160px
-        40px
-        100px;
-
-      max-width: 1200px;
-    }
-
-
-    .project-number {
-
-      font-size: 10px;
-
-      letter-spacing: 3px;
-
-      color: #888;
-
-      margin-bottom: 25px;
-    }
-
-
-    .project-title {
-
-      font-size:
-        clamp(
-          70px,
-          12vw,
-          170px
-        );
-
-      line-height: 0.85;
-
-      letter-spacing: -6px;
-
-      font-weight: 600;
-    }
-
-
-    .project-year {
-
-      margin-top: 30px;
-
-      font-size: 11px;
-
-      letter-spacing: 2px;
-
-      color: #999;
-    }
-
-
-    /* =========================
-       INTRODUCTION
+       PROJECT INTRODUCTION
        ========================= */
 
     .project-intro {
 
-      max-width: 650px;
+      max-width: 720px;
 
-      margin:
-
-        0
-        auto
-        160px;
+      margin: 0 auto;
 
       padding:
 
-        0
-        40px;
+        150px
+        40px
+        90px;
+    }
 
-      font-size: 17px;
 
-      line-height: 1.7;
+    .project-intro h1 {
 
-      color: #bbb;
+      font-size: 28px;
+
+      font-weight: 500;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 35px;
+    }
+
+
+    .project-intro p {
+
+      font-size: 15px;
+
+      line-height: 1.8;
+
+      color: #aaa;
     }
 
 
     /* =========================
-       PHOTOGRAPHS
+       PHOTO GRID
        ========================= */
 
     .gallery {
 
       width: 100%;
+
+      padding:
+
+        0
+        30px
+        100px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 30px;
     }
 
 
     .photo {
 
-      margin-bottom: 14vw;
+      width: 100%;
 
-      padding:
+      aspect-ratio: 4 / 3;
 
-        0
-        5vw;
+      overflow: hidden;
+
+      background: #222;
     }
 
 
     .photo img {
 
-      display: block;
-
       width: 100%;
 
-      height: auto;
+      height: 100%;
 
-      max-height: 90vh;
-
-      object-fit: contain;
-    }
-
-
-    /* Large horizontal image */
-
-    .photo.large {
-
-      padding:
-
-        0
-        5vw;
-    }
-
-
-    /* Smaller image */
-
-    .photo.small {
-
-      width: 65%;
-
-      margin-left: auto;
-
-      margin-right: auto;
-    }
-
-
-    /* Two photographs */
-
-    .photo-pair {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
-      gap: 14px;
-
-      padding:
-
-        0
-        5vw;
-
-      margin-bottom: 14vw;
-    }
-
-
-    .photo-pair img {
-
-      width: 100%;
-
-      height: auto;
+      object-fit: cover;
 
       display: block;
+
+      transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+    }
+
+
+    .photo:hover img {
+
+      transform: scale(1.03);
+
+      opacity: 0.85;
     }
 
 
     /* =========================
-       PROJECT END
+       PROJECT FOOTER
        ========================= */
 
-    .project-end {
+    .project-footer {
 
       padding:
 
-        100px
+        80px
         40px
-        160px;
+        120px;
 
       border-top:
         1px solid #333;
-
-      margin-top: 50px;
 
       display: flex;
 
@@ -304,24 +228,11 @@
         space-between;
 
       align-items:
-        flex-end;
+        center;
     }
 
 
-    .next-project {
-
-      font-size:
-        clamp(
-          35px,
-          5vw,
-          70px
-        );
-
-      letter-spacing: -2px;
-    }
-
-
-    .back-projects {
+    .project-footer a {
 
       font-size: 11px;
 
@@ -331,7 +242,7 @@
     }
 
 
-    .back-projects:hover {
+    .project-footer a:hover {
 
       color: #fff;
     }
@@ -342,6 +253,7 @@
        ========================= */
 
     @media (max-width: 700px) {
+
 
       nav {
 
@@ -365,91 +277,60 @@
       }
 
 
-      .project-header {
+      .project-intro {
 
         padding:
 
           120px
           20px
+          60px;
+      }
+
+
+      .project-intro h1 {
+
+        font-size: 24px;
+
+        margin-bottom: 25px;
+      }
+
+
+      .project-intro p {
+
+        font-size: 14px;
+      }
+
+
+      .gallery {
+
+        padding:
+
+          0
+          12px
           70px;
-      }
-
-
-      .project-title {
-
-        font-size: 22vw;
-
-        letter-spacing: -4px;
-      }
-
-
-      .project-intro {
-
-        padding:
-          0
-          20px;
-
-        margin-bottom:
-          100px;
-
-        font-size: 15px;
-      }
-
-
-      .photo {
-
-        padding:
-          0
-          20px;
-
-        margin-bottom:
-          20vw;
-      }
-
-
-      .photo.large {
-
-        padding:
-          0
-          20px;
-      }
-
-
-      .photo.small {
-
-        width: 85%;
-      }
-
-
-      .photo-pair {
 
         grid-template-columns:
-          1fr;
+          repeat(2, 1fr);
 
-        padding:
-          0
-          20px;
-
-        margin-bottom:
-          20vw;
+        gap: 12px;
       }
 
 
-      .project-end {
+      .project-footer {
 
         padding:
 
-          80px
+          60px
           20px
-          100px;
+          80px;
 
         flex-direction:
           column;
 
+        gap: 30px;
+
         align-items:
           flex-start;
-
-        gap: 50px;
       }
 
     }
@@ -502,107 +383,125 @@
 
 
   <!-- =========================
-       PROJECT HEADER
-       ========================= -->
-
-  <header class="project-header">
-
-    <div class="project-number">
-      PROJECT 01
-    </div>
-
-
-    <h1 class="project-title">
-      DENGKE
-    </h1>
-
-
-    <div class="project-year">
-      2026
-    </div>
-
-  </header>
-
-
-  <!-- =========================
-       PROJECT INTRO
+       PROJECT INTRODUCTION
        ========================= -->
 
   <section class="project-intro">
 
-    Dengke, Sichuan, China.
+
+    <h1>
+      Dengke
+    </h1>
+
+
+    <p>
+
+      Dengke is a small community on the Tibetan Plateau
+      in western Sichuan, China.
+
+      <br><br>
+
+      This project documents the people, landscape and
+      everyday life I encountered there in 2026.
+
+    </p>
+
 
   </section>
 
 
   <!-- =========================
-       PHOTOGRAPHIC STORY
+       PHOTOGRAPHS
        ========================= -->
 
   <main class="gallery">
 
 
-    <!-- Photograph 01 -->
-
-    <div class="photo large">
+    <div class="photo">
 
       <img
-        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=90"
-        alt="Dengke documentary photography"
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
       >
 
     </div>
 
 
-    <!-- Photograph 02 -->
-
-    <div class="photo small">
+    <div class="photo">
 
       <img
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=90"
-        alt="Dengke documentary photography"
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
       >
 
     </div>
 
 
-    <!-- Photograph 03 -->
-
-    <div class="photo-pair">
+    <div class="photo">
 
       <img
-        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=90"
-        alt="Dengke documentary photography"
-      >
-
-
-      <img
-        src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1600&q=90"
-        alt="Dengke documentary photography"
+        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
       >
 
     </div>
 
 
-    <!-- Photograph 04 -->
-
-    <div class="photo large">
+    <div class="photo">
 
       <img
-        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=90"
-        alt="Dengke documentary photography"
+        src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
       >
 
     </div>
 
 
-    <!-- Photograph 05 -->
-
-    <div class="photo small">
+    <div class="photo">
 
       <img
-        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=90"
-        alt="Dengke documentary photography"
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
+      >
+
+    </div>
+
+
+    <div class="photo">
+
+      <img
+        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
+      >
+
+    </div>
+
+
+    <div class="photo">
+
+      <img
+        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
+      >
+
+    </div>
+
+
+    <div class="photo">
+
+      <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
+      >
+
+    </div>
+
+
+    <div class="photo">
+
+      <img
+        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=85"
+        alt="Dengke"
       >
 
     </div>
@@ -612,29 +511,23 @@
 
 
   <!-- =========================
-       PROJECT END
+       FOOTER
        ========================= -->
 
-  <section class="project-end">
+  <footer class="project-footer">
 
 
-    <a
-      href="projects.html"
-      class="back-projects"
-    >
-      ← ALL PROJECTS
+    <a href="index.html">
+      ← HOME
     </a>
 
 
-    <a
-      href="tibetan-plateau.html"
-      class="next-project"
-    >
-      TIBETAN PLATEAU →
+    <a href="projects.html">
+      ALL PROJECTS →
     </a>
 
 
-  </section>
+  </footer>
 
 
 </body>
