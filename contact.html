@@ -1,1 +1,369 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Contact — XIAOCHEN SUN</title>
+
+
+<style>
+
+/* =========================
+   BASIC
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+
+  background: #111;
+
+  color: #fff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+}
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding:
+    28px 40px;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-start;
+
+  z-index: 100;
+
+}
+
+
+.logo {
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+}
+
+
+.menu {
+
+  display: flex;
+
+  gap: 30px;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+}
+
+
+.menu a {
+
+  transition:
+    opacity 0.3s ease;
+
+}
+
+
+.menu a:hover {
+
+  opacity: 0.5;
+
+}
+
+
+/* =========================
+   CONTACT CONTENT
+   ========================= */
+
+.contact {
+
+  min-height: 100vh;
+
+  padding:
+    150px
+    40px
+    100px;
+
+}
+
+
+.contact-info {
+
+  max-width: 650px;
+
+}
+
+
+.contact-row {
+
+  margin-bottom: 30px;
+
+}
+
+
+.contact-label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #777;
+
+}
+
+
+.contact-value {
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  color: #ddd;
+
+}
+
+
+.contact-value a {
+
+  transition:
+    opacity 0.3s ease;
+
+}
+
+
+.contact-value a:hover {
+
+  opacity: 0.5;
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+  nav {
+
+    padding:
+      22px 20px;
+
+  }
+
+
+  .logo {
+
+    font-size: 14px;
+
+  }
+
+
+  .menu {
+
+    gap: 15px;
+
+    font-size: 9px;
+
+  }
+
+
+  .contact {
+
+    padding:
+      120px
+      20px
+      70px;
+
+  }
+
+
+  .contact-value {
+
+    font-size: 14px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+     ========================= -->
+
+<nav>
+
+
+  <a
+    href="index.html"
+    class="logo"
+  >
+    XIAOCHEN SUN
+  </a>
+
+
+  <div class="menu">
+
+
+    <a href="projects.html">
+      PROJECTS
+    </a>
+
+
+    <a href="about.html">
+      ABOUT
+    </a>
+
+
+    <a href="contact.html">
+      CONTACT
+    </a>
+
+
+  </div>
+
+</nav>
+
+
+
+<!-- =========================
+     CONTACT
+     ========================= -->
+
+<main class="contact">
+
+
+  <div class="contact-info">
+
+
+    <!-- EMAIL -->
+
+    <div class="contact-row">
+
+      <span class="contact-label">
+        EMAIL
+      </span>
+
+      <div class="contact-value">
+
+        <a
+          href="mailto:xiaochensun1990@gmail.com"
+        >
+          xiaochensun1990@gmail.com
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- WECHAT -->
+
+    <div class="contact-row">
+
+      <span class="contact-label">
+        WECHAT
+      </span>
+
+      <div class="contact-value">
+        sxcfoto
+      </div>
+
+    </div>
+
+
+
+    <!-- INSTAGRAM -->
+
+    <div class="contact-row">
+
+      <span class="contact-label">
+        INSTAGRAM
+      </span>
+
+      <div class="contact-value">
+
+        <a
+          href="https://www.instagram.com/davesun777"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @davesun777
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</main>
+
+
+</body>
+
+</html>
