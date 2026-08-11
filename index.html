@@ -3,265 +3,280 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
-  <title>XIAOCHEN SUN</title>
+<title>XIAOCHEN SUN — Documentary Photography</title>
 
 
-  <style>
+<style>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* =========================
+   BASIC
+   ========================= */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-    }
+html,
+body {
 
+  width: 100%;
+  height: 100%;
 
-    body {
-      background: #111;
-      color: #fff;
+}
 
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+body {
 
-      overflow: hidden;
-    }
+  background: #111;
 
+  color: #fff;
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
+  overflow: hidden;
 
-    /* =========================
-       NAVIGATION
-       ========================= */
+}
 
-    nav {
 
-      position: fixed;
+/* =========================
+   HERO IMAGE
+   ========================= */
 
-      top: 0;
-      left: 0;
+.hero {
 
-      width: 100%;
+  position: fixed;
 
-      padding: 28px 40px;
+  inset: 0;
 
-      display: flex;
+  width: 100vw;
 
-      justify-content: space-between;
+  height: 100vh;
 
-      align-items: flex-start;
+  background-image:
+    url("HOME-01.JPG");
 
-      z-index: 100;
-    }
+  background-size: cover;
 
+  background-position: center;
 
-    .logo {
+  background-repeat: no-repeat;
 
-      font-size: 16px;
+}
 
-      font-weight: 600;
 
-      letter-spacing: 2px;
-    }
+/* =========================
+   NAVIGATION
+   ========================= */
 
+nav {
 
-    .menu {
+  position: fixed;
 
-      display: flex;
+  top: 0;
 
-      gap: 30px;
+  left: 0;
 
-      font-size: 11px;
+  width: 100%;
 
-      letter-spacing: 2px;
-    }
+  padding: 28px 40px;
 
+  display: flex;
 
-    .menu > a,
-    .projects-link {
+  justify-content:
+    space-between;
 
-      transition:
-        opacity 0.3s ease;
-    }
+  align-items:
+    flex-start;
 
+  z-index: 100;
 
-    .menu > a:hover,
-    .projects-link:hover {
+}
 
-      opacity: 0.5;
-    }
 
+/* =========================
+   LOGO
+   ========================= */
 
-    /* =========================
-       PROJECTS DROPDOWN
-       ========================= */
+.logo {
 
-    .projects-menu {
+  font-size: 16px;
 
-      position: relative;
-    }
+  font-weight: 600;
 
+  letter-spacing: 2px;
 
-    .projects-link {
+  color: #fff;
 
-      cursor: pointer;
-    }
+  text-decoration: none;
 
+}
 
-    .dropdown {
 
-      position: absolute;
+/* =========================
+   PROJECTS MENU
+   ========================= */
 
-      top: 22px;
+.projects {
 
-      right: 0;
+  position: relative;
 
-      min-width: 190px;
+}
 
-      padding-top: 18px;
 
-      display: flex;
+.projects-button {
 
-      flex-direction: column;
+  font-size: 11px;
 
-      gap: 14px;
+  letter-spacing: 2px;
 
-      opacity: 0;
+  color: #fff;
 
-      visibility: hidden;
+  text-decoration: none;
 
-      transform: translateY(-6px);
+  cursor: pointer;
 
-      transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
-    }
+}
 
 
-    .projects-menu:hover .dropdown {
+/* =========================
+   DROPDOWN
+   ========================= */
 
-      opacity: 1;
+.dropdown {
 
-      visibility: visible;
+  position: absolute;
 
-      transform: translateY(0);
-    }
+  top: 24px;
 
+  right: 0;
 
-    .dropdown a {
+  min-width: 150px;
 
-      display: block;
+  padding-top: 12px;
 
-      text-align: right;
+  opacity: 0;
 
-      font-size: 10px;
+  visibility: hidden;
 
-      letter-spacing: 1.5px;
+  transform:
+    translateY(-5px);
 
-      white-space: nowrap;
+  transition:
 
-      transition:
-        opacity 0.25s ease;
-    }
+    opacity 0.25s ease,
 
+    transform 0.25s ease,
 
-    .dropdown a:hover {
+    visibility 0.25s ease;
 
-      opacity: 0.5;
-    }
+}
 
 
-    /* =========================
-       HOMEPAGE IMAGE
-       ========================= */
+.projects:hover
+.dropdown {
 
-    .hero {
+  opacity: 1;
 
-      width: 100%;
+  visibility: visible;
 
-      height: 100vh;
+  transform:
+    translateY(0);
 
-      background:
+}
 
-        linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.05),
-          rgba(0, 0, 0, 0.2)
-        ),
 
-        url(
-          "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=2400&q=90"
-        )
+/* =========================
+   DROPDOWN LINKS
+   ========================= */
 
-        center center / cover no-repeat;
-    }
+.dropdown a {
 
+  display: block;
 
-    /* =========================
-       MOBILE
-       ========================= */
+  padding:
 
-    @media (max-width: 700px) {
+    7px
+    0;
 
-      nav {
+  color: #fff;
 
-        padding:
-          22px
-          20px;
-      }
+  font-size: 10px;
 
+  letter-spacing: 1.8px;
 
-      .logo {
+  text-align: right;
 
-        font-size: 14px;
-      }
+  text-decoration: none;
 
+  white-space: nowrap;
 
-      .menu {
+}
 
-        gap: 15px;
 
-        font-size: 9px;
-      }
+.dropdown a:hover {
 
+  opacity: 0.55;
 
-      .dropdown {
+}
 
-        min-width: 160px;
 
-        padding-top: 16px;
+/* =========================
+   MOBILE
+   ========================= */
 
-        gap: 12px;
-      }
+@media (max-width: 700px) {
 
+  nav {
 
-      .dropdown a {
+    padding:
 
-        font-size: 9px;
-      }
+      22px
+      20px;
 
-    }
+  }
 
-  </style>
+
+  .logo {
+
+    font-size: 14px;
+
+  }
+
+
+  .projects-button {
+
+    font-size: 9px;
+
+  }
+
+
+  .dropdown {
+
+    top: 21px;
+
+  }
+
+
+  .dropdown a {
+
+    font-size: 9px;
+
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -269,91 +284,72 @@
 <body>
 
 
-  <!-- =========================
-       NAVIGATION
-       ========================= -->
+<!-- =========================
+     HERO IMAGE
+     ========================= -->
 
-  <nav>
+<div class="hero"></div>
+
+
+
+<!-- =========================
+     NAVIGATION
+     ========================= -->
+
+<nav>
+
+
+  <!-- LOGO -->
+
+  <a
+    href="index.html"
+    class="logo"
+  >
+    XIAOCHEN SUN
+  </a>
+
+
+
+  <!-- PROJECTS -->
+
+  <div class="projects">
 
 
     <a
-      href="index.html"
-      class="logo"
+      href="projects.html"
+      class="projects-button"
     >
-      XIAOCHEN SUN
+      PROJECTS
     </a>
 
 
-    <div class="menu">
+    <!-- DROPDOWN -->
+
+    <div class="dropdown">
 
 
-      <!-- PROJECTS -->
-
-      <div class="projects-menu">
-
-
-        <a
-          href="#"
-          class="projects-link"
-        >
-          PROJECTS
-        </a>
-
-
-        <div class="dropdown">
-
-
-          <a href="dengke.html">
-            DENGKE
-          </a>
-
-
-          <a href="tibetan-plateau.html">
-            TIBETAN PLATEAU
-          </a>
-
-
-          <a href="china.html">
-            CHINA
-          </a>
-
-
-          <a href="people.html">
-            PEOPLE
-          </a>
-
-
-        </div>
-
-
-      </div>
-
-
-      <!-- ABOUT -->
-
-      <a href="about.html">
-        ABOUT
+      <a href="dengke.html">
+        DENGKE
       </a>
 
 
-      <!-- CONTACT -->
+      <!--
+      以后新增摄影项目，
+      只需要在这里增加一行：
 
-      <a href="contact.html">
-        CONTACT
+      <a href="xxx.html">
+        PROJECT NAME
       </a>
+      -->
 
 
     </div>
 
 
-  </nav>
+  </div>
 
 
-  <!-- =========================
-       HERO
-       ========================= -->
-
-  <main class="hero"></main>
+</nav>
 
 
 </body>
