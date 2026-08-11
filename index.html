@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>TOM SUN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM SUN | Documentary Photography</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            margin: 0 0 10px 0;
+            font-weight: 300;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .hero-image {
+            max-width: 90%;
+            max-height: 60vh;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #555;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
-    <h1>TOM SUN</h1>
-    <p>Documentary Photographer</p>
+
+    <header>
+        <h1>TOM SUN</h1>
+        <nav>
+            <a href="#">WORK</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 这里先放一张高质量的极简占位图，后续教你替换成你自己的大幅纪实摄影照片 -->
+        <img class="hero-image" src="https://unsplash.com" alt="Tom Sun Photography">
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TOM SUN. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
