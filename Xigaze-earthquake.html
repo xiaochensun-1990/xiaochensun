@@ -227,7 +227,12 @@ nav {
 
 .project-intro {
 
-  width: 100%;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 26%;
 
   padding:
     125px
@@ -271,10 +276,12 @@ nav {
 
 .gallery {
 
-  width: 100%;
+  width: 74%;
+
+  margin-left: 26%;
 
   padding:
-    0
+    30px
     24px
     80px;
 
@@ -286,7 +293,6 @@ nav {
   gap: 8px;
 
 }
-
 
 .photo {
 
@@ -461,15 +467,18 @@ nav {
    MOBILE
    ========================= */
 
-@media (max-width: 800px) {
+.project-intro {
 
-  nav {
+  position: static;
 
-    padding:
-      22px
-      20px;
+  width: 100%;
 
-  }
+  padding:
+    105px
+    20px
+    40px;
+
+}
 
 
   .logo {
@@ -538,17 +547,21 @@ nav {
 
   .gallery {
 
-    padding:
-      0
-      10px
-      50px;
+  width: 100%;
 
-    grid-template-columns:
-      repeat(2, 1fr);
+  margin-left: 0;
 
-    gap: 6px;
+  padding:
+    0
+    10px
+    50px;
 
-  }
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 6px;
+
+}
 
 
   .lightbox-image {
