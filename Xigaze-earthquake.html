@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Dengke — XIAOCHEN SUN</title>
+
+<style>
+
+/* =========================
+   BASIC
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #111;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 28px 40px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  z-index: 100;
+}
+
+
+.logo {
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+}
+
+
+.menu {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 30px;
+
+}
+
+
+.menu-item {
+
+  position: relative;
+
+}
+
+
+.menu-item > a,
+.projects-button {
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  background: none;
+
+  border: none;
+
+  padding: 0;
+
+  cursor: pointer;
+
+}
+
+
+.menu-item > a:hover,
+.projects-button:hover {
+
+  opacity: 0.55;
+
+}
+
+
+/* =========================
+   PROJECTS DROPDOWN
+   ========================= */
+
+.dropdown {
+
+  position: absolute;
+
+  top: 22px;
+
+  right: 0;
+
+  min-width: 120px;
+
+  padding-top: 10px;
+
+  background: #111;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateY(-5px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+}
+
+
+/* Mouse hover */
+
+.projects:hover .dropdown {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* Click */
+
+.projects.open .dropdown {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+}
+
+
+.dropdown a {
+
+  display: block;
+
+  padding:
+    6px 0;
+
+  text-align: right;
+
+  font-size: 10px;
+
+  letter-spacing: 1.8px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+}
+
+
+.dropdown a:hover {
+
+  opacity: 0.55;
+
+}
+
+
+/* =========================
+   PROJECT INTRODUCTION
+   ========================= */
+
+.project-intro {
+
+  width: 100%;
+
+  padding:
+    125px
+    40px
+    45px;
+
+  text-align: left;
+
+}
+
+
+.project-intro h1 {
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 18px;
+
+}
+
+
+.project-intro p {
+
+  max-width: 560px;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #999;
+
+}
+
+
+/* =========================
+   PHOTO GRID
+   ========================= */
+
+.gallery {
+
+  width: 100%;
+
+  padding:
+    0
+    24px
+    80px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 8px;
+
+}
+
+
+.photo {
+
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: #222;
+
+  cursor: pointer;
+
+}
+
+
+.photo img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: #111;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+
+}
+
+
+.photo:hover img {
+
+  transform:
+    scale(1.02);
+
+  opacity: 0.88;
+
+}
+
+
+/* =========================
+   LIGHTBOX
+   ========================= */
+
+.lightbox {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(0,0,0,0.96);
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 1000;
+
+}
+
+
+.lightbox.active {
+
+  display: flex;
+
+}
+
+
+.lightbox-image {
+
+  max-width: 90vw;
+
+  max-height: 90vh;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+
+}
+
+
+/* =========================
+   CLOSE
+   ========================= */
+
+.close {
+
+  position: absolute;
+
+  top: 20px;
+
+  right: 32px;
+
+  font-size: 32px;
+
+  font-weight: 300;
+
+  color: white;
+
+  cursor: pointer;
+
+  z-index: 1001;
+
+}
+
+
+/* =========================
+   PREVIOUS / NEXT
+   ========================= */
+
+.prev,
+.next {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  font-size: 36px;
+
+  font-weight: 300;
+
+  color: white;
+
+  cursor: pointer;
+
+  padding: 30px;
+
+  user-select: none;
+
+  z-index: 1001;
+
+}
+
+
+.prev {
+
+  left: 5px;
+
+}
+
+
+.next {
+
+  right: 5px;
+
+}
+
+
+.prev:hover,
+.next:hover,
+.close:hover {
+
+  opacity: 0.5;
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 800px) {
+
+  nav {
+
+    padding:
+      22px
+      20px;
+
+  }
+
+
+  .logo {
+
+    font-size: 14px;
+
+  }
+
+
+  .menu {
+
+    gap: 15px;
+
+    font-size: 9px;
+
+  }
+
+
+  .menu-item > a,
+  .projects-button {
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+  }
+
+
+  .dropdown {
+
+    top: 19px;
+
+  }
+
+
+  .dropdown a {
+
+    font-size: 9px;
+
+  }
+
+
+  .project-intro {
+
+    padding:
+      105px
+      20px
+      40px;
+
+  }
+
+
+  .project-intro h1 {
+
+    font-size: 20px;
+
+  }
+
+
+  .project-intro p {
+
+    font-size: 13px;
+
+  }
+
+
+  .gallery {
+
+    padding:
+      0
+      10px
+      50px;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 6px;
+
+  }
+
+
+  .lightbox-image {
+
+    max-width: 94vw;
+
+    max-height: 84vh;
+
+  }
+
+
+  .close {
+
+    top: 15px;
+
+    right: 18px;
+
+    font-size: 28px;
+
+  }
+
+
+  .prev,
+  .next {
+
+    font-size: 28px;
+
+    padding: 15px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+     ========================= -->
+
+<nav>
+
+
+  <!-- LOGO -->
+
+  <a
+    href="index.html"
+    class="logo"
+  >
+    XIAOCHEN SUN
+  </a>
+
+
+  <div class="menu">
+
+
+    <!-- PROJECTS -->
+
+    <div
+      class="menu-item projects"
+      id="projectsMenu"
+    >
+
+      <button
+        class="projects-button"
+        id="projectsButton"
+        type="button"
+      >
+        PROJECTS
+      </button>
+
+
+      <div class="dropdown">
+
+        <a href="dengke.html">
+          DENGKE
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <div class="menu-item">
+
+      <a href="about.html">
+        ABOUT
+      </a>
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <div class="menu-item">
+
+      <a href="contact.html">
+        CONTACT
+      </a>
+
+    </div>
+
+
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     PROJECT INTRODUCTION
+     ========================= -->
+
+<section class="project-intro">
+
+
+  <h1>
+    Dengke
+  </h1>
+
+
+  <p>
+
+    Captured in July 2026 during a journey with Professor Mel’s
+    Dengke Project team in Western Sichuan, this series of
+    photographs offers an intimate look at local Tibetan
+    portraits, religious tapestries, and the raw beauty
+    of the natural landscape.
+
+    <br><br>
+
+    More than a visual chronicle, this collection serves
+    as a micro-anthropological exploration into the rich,
+    intricate layers of intersecting faiths and cultures.
+    Nestled within the folds of snow-capped mountains
+    and prayer flags, a subtle yet profound dialogue
+    unfolds at this remote, sacred intersection—where
+    the ancient oil lamps of Tibetan Buddhism quietly
+    meet the subtle footprints of Christian cross-cultural
+    mission. Through these frames of light and shadow,
+    we seek to witness a dynamic yet harmonious collision
+    of Eastern and Western civilisations, revealing the
+    universal human longing for redemption, promise,
+    and the eternal, hidden beneath the garments of
+    different faiths.
+
+  </p>
+
+</section>
+
+
+<!-- =========================
+     PHOTO GRID
+     ========================= -->
+
+<main class="gallery">
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-01.JPG"
+      alt="Dengke 01"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-02.JPG"
+      alt="Dengke 02"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-03.JPG"
+      alt="Dengke 03"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-04.JPG"
+      alt="Dengke 04"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-05.JPG"
+      alt="Dengke 05"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-06.JPG"
+      alt="Dengke 06"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-07.JPG"
+      alt="Dengke 07"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-08.JPG"
+      alt="Dengke 08"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-09.JPG"
+      alt="Dengke 09"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-10.JPG"
+      alt="Dengke 10"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-11.JPG"
+      alt="Dengke 11"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-12.JPG"
+      alt="Dengke 12"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-13.JPG"
+      alt="Dengke 13"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-14.JPG"
+      alt="Dengke 14"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-15.JPG"
+      alt="Dengke 15"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-16.JPG"
+      alt="Dengke 16"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-17.JPG"
+      alt="Dengke 17"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-18.JPG"
+      alt="Dengke 18"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-19.JPG"
+      alt="Dengke 19"
+    >
+  </div>
+
+
+  <div class="photo">
+    <img
+      src="DENGKE-20.JPG"
+      alt="Dengke 20"
+    >
+  </div>
+
+
+</main>
+
+
+<!-- =========================
+     LIGHTBOX
+     ========================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+>
+
+
+  <span
+    class="close"
+    id="close"
+  >
+    ×
+  </span>
+
+
+  <span
+    class="prev"
+    id="prev"
+  >
+    ‹
+  </span>
+
+
+  <img
+    class="lightbox-image"
+    id="lightboxImage"
+    src=""
+    alt=""
+  >
+
+
+  <span
+    class="next"
+    id="next"
+  >
+    ›
+  </span>
+
+
+</div>
+
+
+<script>
+
+
+/* =========================
+   PROJECTS MENU
+   ========================= */
+
+const projectsButton =
+  document.getElementById(
+    "projectsButton"
+  );
+
+
+const projectsMenu =
+  document.getElementById(
+    "projectsMenu"
+  );
+
+
+projectsButton.addEventListener(
+  "click",
+  function(event) {
+
+    event.stopPropagation();
+
+    projectsMenu.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+/* Close PROJECTS menu */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      !projectsMenu.contains(
+        event.target
+      )
+    ) {
+
+      projectsMenu.classList.remove(
+        "open"
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================
+   LIGHTBOX
+   ========================= */
+
+const photos =
+  document.querySelectorAll(
+    ".photo img"
+  );
+
+
+const lightbox =
+  document.getElementById(
+    "lightbox"
+  );
+
+
+const lightboxImage =
+  document.getElementById(
+    "lightboxImage"
+  );
+
+
+const closeButton =
+  document.getElementById(
+    "close"
+  );
+
+
+const prevButton =
+  document.getElementById(
+    "prev"
+  );
+
+
+const nextButton =
+  document.getElementById(
+    "next"
+  );
+
+
+let currentIndex = 0;
+
+
+/* =========================
+   OPEN
+   ========================= */
+
+function openLightbox(index) {
+
+  currentIndex = index;
+
+  lightboxImage.src =
+    photos[currentIndex].src;
+
+  lightboxImage.alt =
+    photos[currentIndex].alt;
+
+  lightbox.classList.add(
+    "active"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================
+   CLOSE
+   ========================= */
+
+function closeLightbox() {
+
+  lightbox.classList.remove(
+    "active"
+  );
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+/* =========================
+   NEXT
+   ========================= */
+
+function showNext() {
+
+  currentIndex++;
+
+  if (
+    currentIndex >=
+    photos.length
+  ) {
+
+    currentIndex = 0;
+
+  }
+
+  lightboxImage.src =
+    photos[currentIndex].src;
+
+  lightboxImage.alt =
+    photos[currentIndex].alt;
+
+}
+
+
+/* =========================
+   PREVIOUS
+   ========================= */
+
+function showPrevious() {
+
+  currentIndex--;
+
+  if (
+    currentIndex < 0
+  ) {
+
+    currentIndex =
+      photos.length - 1;
+
+  }
+
+  lightboxImage.src =
+    photos[currentIndex].src;
+
+  lightboxImage.alt =
+    photos[currentIndex].alt;
+
+}
+
+
+/* =========================
+   PHOTO CLICK
+   ========================= */
+
+photos.forEach(
+  (photo, index) => {
+
+    photo.addEventListener(
+      "click",
+      () => {
+
+        openLightbox(index);
+
+      }
+    );
+
+  }
+);
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+closeButton.addEventListener(
+  "click",
+  closeLightbox
+);
+
+
+nextButton.addEventListener(
+  "click",
+  showNext
+);
+
+
+prevButton.addEventListener(
+  "click",
+  showPrevious
+);
+
+
+/* =========================
+   BACKGROUND CLICK
+   ========================= */
+
+lightbox.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target === lightbox
+    ) {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+/* =========================
+   KEYBOARD
+   ========================= */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      !lightbox.classList.contains(
+        "active"
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeLightbox();
+
+    }
+
+
+    if (
+      event.key === "ArrowRight"
+    ) {
+
+      showNext();
+
+    }
+
+
+    if (
+      event.key === "ArrowLeft"
+    ) {
+
+      showPrevious();
+
+    }
+
+  }
+);
+
+</script>
+
+
+</body>
+
+</html>
