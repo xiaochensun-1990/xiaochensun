@@ -1,1 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>SONG OF THE SOUTHERN TIANSHAN — XIAOCHEN SUN</title>
+
+<style>
+
+/* =========================
+   BASIC
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #1b2025;
+  color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+  width: 100%;
+  padding: 30px 4vw 26px 4vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(27, 32, 37, 0.96);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 13px;
+  letter-spacing: 0.08em;
+
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.5;
+}
+
+
+/* =========================
+   PROJECT INTRO
+   ========================= */
+
+.project-intro {
+  width: 92%;
+  max-width: 1500px;
+
+  margin: 55px auto 65px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.project-title {
+  font-size: clamp(22px, 2.2vw, 34px);
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  line-height: 1.2;
+}
+
+.project-description {
+  max-width: 420px;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: #b8bdc2;
+
+  text-align: right;
+}
+
+
+/* =========================
+   GALLERY
+   ========================= */
+
+.gallery {
+  width: 92%;
+  max-width: 1500px;
+
+  margin: 0 auto 100px auto;
+
+  columns: 3;
+  column-gap: 22px;
+}
+
+.gallery figure {
+  width: 100%;
+
+  margin: 0 0 22px 0;
+
+  break-inside: avoid;
+
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  border-radius: 2px;
+
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+}
+
+.gallery figure:hover img {
+  transform: scale(1.015);
+  opacity: 0.92;
+}
+
+
+/* =========================
+   PHOTO NUMBER
+   ========================= */
+
+.photo-number {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #777e84;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  width: 92%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 35px 0 50px 0;
+
+  border-top: 1px solid #343a40;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  color: #777e84;
+
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+}
+
+.back {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+
+  transition: opacity 0.3s ease;
+}
+
+.back:hover {
+  opacity: 0.5;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+  .gallery {
+    columns: 2;
+    column-gap: 18px;
+  }
+
+  .gallery figure {
+    margin-bottom: 18px;
+  }
+
+  .project-intro {
+    margin-top: 45px;
+    margin-bottom: 50px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 650px) {
+
+  header {
+    padding: 22px 5vw 20px 5vw;
+  }
+
+  .logo {
+    font-size: 13px;
+  }
+
+  nav {
+    gap: 16px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+
+  .project-intro {
+    width: 90%;
+
+    margin: 38px auto 40px auto;
+
+    display: block;
+  }
+
+  .project-title {
+    font-size: 19px;
+
+    letter-spacing: 0.07em;
+  }
+
+  .project-description {
+    max-width: none;
+
+    margin-top: 18px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    text-align: left;
+  }
+
+
+  .gallery {
+    width: 90%;
+
+    columns: 2;
+
+    column-gap: 10px;
+
+    margin-bottom: 65px;
+  }
+
+  .gallery figure {
+    margin-bottom: 10px;
+  }
+
+  .photo-number {
+    display: none;
+  }
+
+
+  footer {
+    width: 90%;
+
+    padding: 25px 0 35px 0;
+  }
+
+  footer p,
+  .back {
+    font-size: 9px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+  <a href="index.html" class="logo">
+    XIAOCHEN SUN
+  </a>
+
+  <nav>
+
+    <a href="projects.html">
+      PROJECTS
+    </a>
+
+    <a href="about.html">
+      ABOUT
+    </a>
+
+    <a href="contact.html">
+      CONTACT
+    </a>
+
+  </nav>
+
+</header>
+
+
+
+<!-- =========================
+     PROJECT INTRO
+     ========================= -->
+
+<section class="project-intro">
+
+  <h1 class="project-title">
+    SONG OF THE SOUTHERN TIANSHAN
+  </h1>
+
+  <p class="project-description">
+    Southern Xinjiang, China
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     PHOTO GALLERY
+     ========================= -->
+
+<main class="gallery">
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-01.JPG"
+      alt="Song of the Southern Tianshan 01"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-02.JPG"
+      alt="Song of the Southern Tianshan 02"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-03.JPG"
+      alt="Song of the Southern Tianshan 03"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-04.JPG"
+      alt="Song of the Southern Tianshan 04"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-05.JPG"
+      alt="Song of the Southern Tianshan 05"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-06.JPG"
+      alt="Song of the Southern Tianshan 06"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-07.JPG"
+      alt="Song of the Southern Tianshan 07"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-08.JPG"
+      alt="Song of the Southern Tianshan 08"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-09.JPG"
+      alt="Song of the Southern Tianshan 09"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-10.JPG"
+      alt="Song of the Southern Tianshan 10"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-11.JPG"
+      alt="Song of the Southern Tianshan 11"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-12.JPG"
+      alt="Song of the Southern Tianshan 12"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-13.JPG"
+      alt="Song of the Southern Tianshan 13"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-14.JPG"
+      alt="Song of the Southern Tianshan 14"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-15.JPG"
+      alt="Song of the Southern Tianshan 15"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-16.JPG"
+      alt="Song of the Southern Tianshan 16"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-17.JPG"
+      alt="Song of the Southern Tianshan 17"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-18.JPG"
+      alt="Song of the Southern Tianshan 18"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-19.JPG"
+      alt="Song of the Southern Tianshan 19"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-20.JPG"
+      alt="Song of the Southern Tianshan 20"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-21.JPG"
+      alt="Song of the Southern Tianshan 21"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-22.JPG"
+      alt="Song of the Southern Tianshan 22"
+      loading="lazy"
+    >
+  </figure>
+
+
+  <figure>
+    <img
+      src="SONG OF THE SOUTHERN TIANSHAN-23.JPG"
+      alt="Song of the Southern Tianshan 23"
+      loading="lazy"
+    >
+  </figure>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+  <p>
+    © XIAOCHEN SUN
+  </p>
+
+  <a href="projects.html" class="back">
+    ← BACK TO PROJECTS
+  </a>
+
+</footer>
+
+
+</body>
+
+</html>
