@@ -285,6 +285,19 @@ nav {
    GALLERY
    ========================= */
 
+/*
+   IMPORTANT:
+   CSS GRID is used instead of masonry columns.
+
+   This guarantees:
+
+   01  02  03  04  05
+   06  07  08  09  10
+   11  12  13  14  15
+   16  17  18  19  20
+   21  22  23
+*/
+
 .gallery {
 
   width: 92%;
@@ -294,9 +307,15 @@ nav {
   margin:
     0 auto 100px auto;
 
-  columns: 3;
+  display: grid;
 
-  column-gap: 22px;
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 18px;
+
+  align-items:
+    start;
 
 }
 
@@ -305,11 +324,7 @@ nav {
 
   width: 100%;
 
-  margin:
-    0 0 22px 0;
-
-  break-inside:
-    avoid;
+  margin: 0;
 
   overflow: hidden;
 
@@ -347,20 +362,32 @@ nav {
    TABLET
    ========================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 
   .gallery {
 
-    columns: 2;
+    grid-template-columns:
+      repeat(4, 1fr);
 
-    column-gap: 18px;
+    gap: 15px;
 
   }
 
+}
 
-  .gallery figure {
 
-    margin-bottom: 18px;
+/* =========================
+   SMALL TABLET
+   ========================= */
+
+@media (max-width: 800px) {
+
+  .gallery {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 13px;
 
   }
 
@@ -452,18 +479,12 @@ nav {
 
     width: 90%;
 
-    columns: 2;
+    grid-template-columns:
+      repeat(2, 1fr);
 
-    column-gap: 10px;
+    gap: 10px;
 
     margin-bottom: 65px;
-
-  }
-
-
-  .gallery figure {
-
-    margin-bottom: 10px;
 
   }
 
