@@ -12,6 +12,7 @@
 
 <title>SONG OF THE SOUTHERN TIANSHAN — XIAOCHEN SUN</title>
 
+
 <style>
 
 /* =========================
@@ -29,11 +30,20 @@ html {
 }
 
 body {
+
   background: #1b2025;
+
   color: #f2f2f2;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   font-weight: 400;
+
   line-height: 1.5;
+
 }
 
 
@@ -42,47 +52,201 @@ body {
    ========================= */
 
 header {
+
   width: 100%;
-  padding: 30px 4vw 26px 4vw;
+
+  padding:
+    30px 4vw 26px 4vw;
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
 
   position: sticky;
+
   top: 0;
+
   z-index: 100;
 
-  background: rgba(27, 32, 37, 0.96);
-  backdrop-filter: blur(8px);
+  background:
+    rgba(27, 32, 37, 0.96);
+
+  backdrop-filter:
+    blur(8px);
+
 }
 
+
+/* =========================
+   LOGO
+   ========================= */
+
 .logo {
+
   color: #ffffff;
+
   text-decoration: none;
 
   font-size: 16px;
+
   letter-spacing: 0.08em;
+
   font-weight: 500;
+
 }
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
 
 nav {
+
   display: flex;
+
   gap: 30px;
+
+  align-items:
+    center;
+
 }
 
-nav a {
+
+.nav-item {
+
+  position: relative;
+
+}
+
+
+.nav-link,
+.projects-button {
+
   color: #ffffff;
+
   text-decoration: none;
 
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   font-size: 13px;
+
   letter-spacing: 0.08em;
 
-  transition: opacity 0.3s ease;
+  font-weight: 400;
+
+  background: none;
+
+  border: none;
+
+  padding: 0;
+
+  cursor: pointer;
+
 }
 
-nav a:hover {
+
+.nav-link:hover,
+.projects-button:hover {
+
   opacity: 0.5;
+
+}
+
+
+/* =========================
+   PROJECTS DROPDOWN
+   ========================= */
+
+.dropdown {
+
+  position: absolute;
+
+  top: 22px;
+
+  right: 0;
+
+  min-width: 300px;
+
+  padding-top: 12px;
+
+  background: #1b2025;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateY(-5px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+}
+
+
+/* Desktop hover */
+
+.projects:hover .dropdown {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* JavaScript click */
+
+.projects.open .dropdown {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+}
+
+
+.dropdown a {
+
+  display: block;
+
+  padding:
+    7px 0;
+
+  text-align: right;
+
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+}
+
+
+.dropdown a:hover {
+
+  opacity: 0.5;
+
 }
 
 
@@ -91,37 +255,29 @@ nav a:hover {
    ========================= */
 
 .project-intro {
+
   width: 92%;
+
   max-width: 1500px;
 
-  margin: 55px auto 65px auto;
+  margin:
+    55px auto 65px auto;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 40px;
 }
 
+
 .project-title {
-  font-size: clamp(22px, 2.2vw, 34px);
+
+  font-size:
+    clamp(22px, 2.2vw, 34px);
 
   font-weight: 400;
 
-  letter-spacing: 0.08em;
+  letter-spacing:
+    0.08em;
 
   line-height: 1.2;
-}
 
-.project-description {
-  max-width: 420px;
-
-  font-size: 13px;
-
-  line-height: 1.8;
-
-  color: #b8bdc2;
-
-  text-align: right;
 }
 
 
@@ -130,27 +286,40 @@ nav a:hover {
    ========================= */
 
 .gallery {
+
   width: 92%;
+
   max-width: 1500px;
 
-  margin: 0 auto 100px auto;
+  margin:
+    0 auto 100px auto;
 
   columns: 3;
+
   column-gap: 22px;
+
 }
+
 
 .gallery figure {
+
   width: 100%;
 
-  margin: 0 0 22px 0;
+  margin:
+    0 0 22px 0;
 
-  break-inside: avoid;
+  break-inside:
+    avoid;
 
   overflow: hidden;
+
 }
 
+
 .gallery img {
+
   width: 100%;
+
   height: auto;
 
   display: block;
@@ -160,72 +329,17 @@ nav a:hover {
   transition:
     transform 0.6s ease,
     opacity 0.6s ease;
+
 }
+
 
 .gallery figure:hover img {
-  transform: scale(1.015);
+
+  transform:
+    scale(1.015);
+
   opacity: 0.92;
-}
 
-
-/* =========================
-   PHOTO NUMBER
-   ========================= */
-
-.photo-number {
-  display: block;
-
-  margin-top: 8px;
-
-  color: #777e84;
-
-  font-size: 9px;
-
-  letter-spacing: 0.08em;
-}
-
-
-/* =========================
-   FOOTER
-   ========================= */
-
-footer {
-  width: 92%;
-  max-width: 1500px;
-
-  margin: 0 auto;
-
-  padding: 35px 0 50px 0;
-
-  border-top: 1px solid #343a40;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer p {
-  color: #777e84;
-
-  font-size: 10px;
-
-  letter-spacing: 0.08em;
-}
-
-.back {
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 10px;
-
-  letter-spacing: 0.08em;
-
-  transition: opacity 0.3s ease;
-}
-
-.back:hover {
-  opacity: 0.5;
 }
 
 
@@ -236,17 +350,27 @@ footer p {
 @media (max-width: 1000px) {
 
   .gallery {
+
     columns: 2;
+
     column-gap: 18px;
+
   }
+
 
   .gallery figure {
+
     margin-bottom: 18px;
+
   }
 
+
   .project-intro {
+
     margin-top: 45px;
+
     margin-bottom: 50px;
+
   }
 
 }
@@ -259,50 +383,73 @@ footer p {
 @media (max-width: 650px) {
 
   header {
-    padding: 22px 5vw 20px 5vw;
+
+    padding:
+      22px 5vw 20px 5vw;
+
   }
+
 
   .logo {
+
     font-size: 13px;
+
   }
+
 
   nav {
+
     gap: 16px;
+
   }
 
-  nav a {
+
+  .nav-link,
+  .projects-button {
+
     font-size: 10px;
+
+  }
+
+
+  .dropdown {
+
+    top: 19px;
+
+    min-width: 250px;
+
+  }
+
+
+  .dropdown a {
+
+    font-size: 9px;
+
   }
 
 
   .project-intro {
+
     width: 90%;
 
-    margin: 38px auto 40px auto;
+    margin:
+      38px auto 40px auto;
 
-    display: block;
   }
+
 
   .project-title {
+
     font-size: 19px;
 
-    letter-spacing: 0.07em;
-  }
+    letter-spacing:
+      0.07em;
 
-  .project-description {
-    max-width: none;
-
-    margin-top: 18px;
-
-    font-size: 11px;
-
-    line-height: 1.7;
-
-    text-align: left;
   }
 
 
   .gallery {
+
     width: 90%;
 
     columns: 2;
@@ -310,26 +457,14 @@ footer p {
     column-gap: 10px;
 
     margin-bottom: 65px;
+
   }
+
 
   .gallery figure {
+
     margin-bottom: 10px;
-  }
 
-  .photo-number {
-    display: none;
-  }
-
-
-  footer {
-    width: 90%;
-
-    padding: 25px 0 35px 0;
-  }
-
-  footer p,
-  .back {
-    font-size: 9px;
   }
 
 }
@@ -348,23 +483,84 @@ footer p {
 
 <header>
 
-  <a href="index.html" class="logo">
+
+  <a
+    href="index.html"
+    class="logo"
+  >
     XIAOCHEN SUN
   </a>
 
+
   <nav>
 
-    <a href="projects.html">
-      PROJECTS
-    </a>
 
-    <a href="about.html">
-      ABOUT
-    </a>
+    <!-- PROJECTS -->
 
-    <a href="contact.html">
-      CONTACT
-    </a>
+    <div
+      class="nav-item projects"
+      id="projectsMenu"
+    >
+
+      <button
+        class="projects-button"
+        id="projectsButton"
+        type="button"
+      >
+        PROJECTS
+      </button>
+
+
+      <div class="dropdown">
+
+
+        <a href="dengke.html">
+          DENGKE
+        </a>
+
+
+        <a href="Xigaze-earthquake.html">
+          XIGAZE EARTHQUAKE
+        </a>
+
+
+        <a href="SONG%20OF%20THE%20SOUTHERN%20TIANSHAN.html">
+          SONG OF THE SOUTHERN TIANSHAN
+        </a>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <div class="nav-item">
+
+      <a
+        href="about.html"
+        class="nav-link"
+      >
+        ABOUT
+      </a>
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <div class="nav-item">
+
+      <a
+        href="contact.html"
+        class="nav-link"
+      >
+        CONTACT
+      </a>
+
+    </div>
+
 
   </nav>
 
@@ -373,7 +569,7 @@ footer p {
 
 
 <!-- =========================
-     PROJECT INTRO
+     PROJECT TITLE
      ========================= -->
 
 <section class="project-intro">
@@ -381,10 +577,6 @@ footer p {
   <h1 class="project-title">
     SONG OF THE SOUTHERN TIANSHAN
   </h1>
-
-  <p class="project-description">
-    Southern Xinjiang, China
-  </p>
 
 </section>
 
@@ -608,21 +800,57 @@ footer p {
 
 
 
-<!-- =========================
-     FOOTER
-     ========================= -->
+<script>
 
-<footer>
+/* =========================
+   PROJECTS MENU
+   ========================= */
 
-  <p>
-    © XIAOCHEN SUN
-  </p>
+const projectsButton =
+  document.getElementById(
+    "projectsButton"
+  );
 
-  <a href="projects.html" class="back">
-    ← BACK TO PROJECTS
-  </a>
+const projectsMenu =
+  document.getElementById(
+    "projectsMenu"
+  );
 
-</footer>
+
+projectsButton.addEventListener(
+  "click",
+  function(event) {
+
+    event.stopPropagation();
+
+    projectsMenu.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+/* Close menu when clicking elsewhere */
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      !projectsMenu.contains(event.target)
+    ) {
+
+      projectsMenu.classList.remove(
+        "open"
+      );
+
+    }
+
+  }
+);
+
+</script>
 
 
 </body>
