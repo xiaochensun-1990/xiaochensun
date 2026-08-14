@@ -12,6 +12,7 @@
 
 <title>Dengke — XIAOCHEN SUN</title>
 
+
 <style>
 
 /* =========================
@@ -29,14 +30,81 @@ html {
 }
 
 body {
+
   background: #111;
+
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
 }
 
 a {
+
   color: inherit;
+
   text-decoration: none;
+
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+
+  width: 100%;
+
+  padding:
+    30px 4vw 26px 4vw;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  background:
+    rgba(17, 17, 17, 0.96);
+
+  backdrop-filter:
+    blur(8px);
+
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.logo {
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  letter-spacing: 0.08em;
+
+  font-weight: 500;
+
 }
 
 
@@ -46,82 +114,40 @@ a {
 
 nav {
 
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 80px;
-
-  padding: 28px 40px;
-
   display: flex;
-
-  justify-content: space-between;
-
-  align-items: flex-start;
-
-  /* IMPORTANT:
-     The solid background prevents
-     project content from showing
-     through the navigation. */
-
-  background: #111;
-
-  /* Keep navigation above all
-     project content and images. */
-
-  z-index: 9999;
-}
-
-
-.logo {
-
-  font-size: 16px;
-
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-}
-
-
-.menu {
-
-  display: flex;
-
-  align-items: flex-start;
 
   gap: 30px;
 
+  align-items:
+    center;
+
 }
 
 
-.menu-item {
+.nav-item {
 
   position: relative;
 
 }
 
 
-.menu-item > a,
+.nav-link,
 .projects-button {
+
+  color: #ffffff;
+
+  text-decoration: none;
 
   font-family:
     Arial,
     Helvetica,
     sans-serif;
 
-  font-size: 11px;
+  font-size: 13px;
 
-  letter-spacing: 2px;
+  letter-spacing: 0.08em;
 
-  color: #fff;
-
-  text-decoration: none;
-
-  white-space: nowrap;
+  font-weight: 400;
 
   background: none;
 
@@ -134,10 +160,10 @@ nav {
 }
 
 
-.menu-item > a:hover,
+.nav-link:hover,
 .projects-button:hover {
 
-  opacity: 0.55;
+  opacity: 0.5;
 
 }
 
@@ -154,9 +180,9 @@ nav {
 
   right: 0;
 
-  min-width: 120px;
+  min-width: 300px;
 
-  padding-top: 10px;
+  padding-top: 12px;
 
   background: #111;
 
@@ -208,15 +234,15 @@ nav {
   display: block;
 
   padding:
-    6px 0;
+    7px 0;
 
   text-align: right;
 
   font-size: 10px;
 
-  letter-spacing: 1.8px;
+  letter-spacing: 0.12em;
 
-  color: #fff;
+  color: #ffffff;
 
   text-decoration: none;
 
@@ -227,124 +253,136 @@ nav {
 
 .dropdown a:hover {
 
-  opacity: 0.55;
+  opacity: 0.5;
 
 }
 
 
 /* =========================
-   PROJECT INTRODUCTION
+   PROJECT INTRO
    ========================= */
 
 .project-intro {
 
-  width: 100%;
+  width: 92%;
 
-  /*
-    The navigation is 80px high.
-    120px top padding leaves enough
-    space below the fixed navigation.
-  */
+  max-width: 1500px;
 
-  padding:
-    120px
-    40px
-    45px;
-
-  text-align: left;
+  margin:
+    55px auto 65px auto;
 
 }
 
 
-.project-intro h1 {
+.project-title {
 
-  font-size: 22px;
+  font-size:
+    clamp(22px, 2.2vw, 34px);
 
-  font-weight: 500;
+  font-weight: 400;
 
-  letter-spacing: 1px;
+  letter-spacing:
+    0.04em;
 
-  margin-bottom: 18px;
+  line-height: 1.2;
 
-}
-
-
-.project-intro p {
-
-  max-width: 560px;
-
-  font-size: 13px;
-
-  line-height: 1.7;
-
-  color: #999;
+  margin-bottom: 42px;
 
 }
 
 
 /* =========================
-   PHOTO GRID
+   PROJECT DESCRIPTION
+   ========================= */
+
+.project-description {
+
+  max-width: 1050px;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.015em;
+
+  color: #d0d0d0;
+
+}
+
+
+.project-description p {
+
+  margin-bottom: 28px;
+
+}
+
+
+.project-description p:last-child {
+
+  margin-bottom: 0;
+
+}
+
+
+/* =========================
+   GALLERY
    ========================= */
 
 .gallery {
 
-  width: 100%;
+  width: 92%;
 
-  padding:
-    0
-    24px
-    80px;
+  max-width: 1500px;
+
+  margin:
+    0 auto 100px auto;
 
   display: grid;
 
   grid-template-columns:
     repeat(5, 1fr);
 
-  gap: 8px;
+  gap: 18px;
 
 }
 
 
-.photo {
+.gallery figure {
 
   width: 100%;
 
-  aspect-ratio: 4 / 3;
+  margin: 0;
 
   overflow: hidden;
-
-  background: #222;
 
   cursor: pointer;
 
 }
 
 
-.photo img {
+.gallery img {
 
   width: 100%;
 
-  height: 100%;
+  height: auto;
 
   display: block;
 
-  object-fit: contain;
-
-  background: #111;
+  border-radius: 2px;
 
   transition:
-    transform 0.35s ease,
-    opacity 0.35s ease;
+    transform 0.5s ease,
+    opacity 0.5s ease;
 
 }
 
 
-.photo:hover img {
+.gallery figure:hover img {
 
   transform:
-    scale(1.02);
+    scale(1.015);
 
-  opacity: 0.88;
+  opacity: 0.9;
 
 }
 
@@ -359,16 +397,22 @@ nav {
 
   inset: 0;
 
+  width: 100%;
+
+  height: 100%;
+
   background:
-    rgba(0,0,0,0.96);
+    rgba(0, 0, 0, 0.96);
 
   display: none;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  z-index: 10000;
+  z-index: 9999;
 
 }
 
@@ -392,40 +436,53 @@ nav {
 
   object-fit: contain;
 
+  display: block;
+
 }
 
 
 /* =========================
-   CLOSE
+   LIGHTBOX CLOSE
    ========================= */
 
-.close {
+.lightbox-close {
 
   position: absolute;
 
   top: 20px;
 
-  right: 32px;
+  right: 30px;
 
-  font-size: 32px;
+  color: #ffffff;
+
+  font-size: 34px;
 
   font-weight: 300;
 
-  color: white;
+  line-height: 1;
 
   cursor: pointer;
 
   z-index: 10001;
 
+  user-select: none;
+
+}
+
+
+.lightbox-close:hover {
+
+  opacity: 0.5;
+
 }
 
 
 /* =========================
-   PREVIOUS / NEXT
+   LIGHTBOX ARROWS
    ========================= */
 
-.prev,
-.next {
+.lightbox-prev,
+.lightbox-next {
 
   position: absolute;
 
@@ -434,11 +491,13 @@ nav {
   transform:
     translateY(-50%);
 
-  font-size: 36px;
+  color: #ffffff;
+
+  font-size: 42px;
 
   font-weight: 300;
 
-  color: white;
+  line-height: 1;
 
   cursor: pointer;
 
@@ -451,25 +510,99 @@ nav {
 }
 
 
-.prev {
+.lightbox-prev {
 
-  left: 5px;
-
-}
-
-
-.next {
-
-  right: 5px;
+  left: 0;
 
 }
 
 
-.prev:hover,
-.next:hover,
-.close:hover {
+.lightbox-next {
+
+  right: 0;
+
+}
+
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
 
   opacity: 0.5;
+
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1100px) {
+
+  .gallery {
+
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    gap: 15px;
+
+  }
+
+
+  .project-description {
+
+    max-width: 900px;
+
+  }
+
+}
+
+
+/* =========================
+   SMALL TABLET
+   ========================= */
+
+@media (max-width: 800px) {
+
+  .gallery {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 13px;
+
+  }
+
+
+  .project-intro {
+
+    margin-top: 45px;
+
+    margin-bottom: 50px;
+
+  }
+
+
+  .project-title {
+
+    margin-bottom: 32px;
+
+  }
+
+
+  .project-description {
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+  }
+
+
+  .project-description p {
+
+    margin-bottom: 24px;
+
+  }
 
 }
 
@@ -478,41 +611,34 @@ nav {
    MOBILE
    ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 650px) {
 
-  nav {
-
-    height: 65px;
+  header {
 
     padding:
-      22px
-      20px;
+      22px 5vw 20px 5vw;
 
   }
 
 
   .logo {
 
-    font-size: 14px;
+    font-size: 13px;
 
   }
 
 
-  .menu {
+  nav {
 
-    gap: 15px;
-
-    font-size: 9px;
+    gap: 16px;
 
   }
 
 
-  .menu-item > a,
+  .nav-link,
   .projects-button {
 
-    font-size: 9px;
-
-    letter-spacing: 1.5px;
+    font-size: 10px;
 
   }
 
@@ -520,6 +646,8 @@ nav {
   .dropdown {
 
     top: 19px;
+
+    min-width: 250px;
 
   }
 
@@ -533,45 +661,54 @@ nav {
 
   .project-intro {
 
-    /*
-      Mobile navigation is 65px high.
-      95px gives the project content
-      enough clearance below it.
-    */
+    width: 90%;
 
-    padding:
-      95px
-      20px
-      40px;
+    margin:
+      38px auto 40px auto;
 
   }
 
 
-  .project-intro h1 {
+  .project-title {
 
-    font-size: 20px;
+    font-size: 19px;
+
+    letter-spacing:
+      0.035em;
+
+    margin-bottom: 28px;
 
   }
 
 
-  .project-intro p {
+  .project-description {
 
     font-size: 13px;
+
+    line-height: 1.75;
+
+    letter-spacing: 0;
+
+  }
+
+
+  .project-description p {
+
+    margin-bottom: 22px;
 
   }
 
 
   .gallery {
 
-    padding:
-      0
-      10px
-      50px;
+    width: 90%;
 
     grid-template-columns:
       repeat(2, 1fr);
 
-    gap: 6px;
+    gap: 10px;
+
+    margin-bottom: 65px;
 
   }
 
@@ -585,21 +722,21 @@ nav {
   }
 
 
-  .close {
+  .lightbox-close {
 
     top: 15px;
 
     right: 18px;
 
-    font-size: 28px;
+    font-size: 30px;
 
   }
 
 
-  .prev,
-  .next {
+  .lightbox-prev,
+  .lightbox-next {
 
-    font-size: 28px;
+    font-size: 30px;
 
     padding: 15px;
 
@@ -616,13 +753,11 @@ nav {
 
 
 <!-- =========================
-     NAVIGATION
+     HEADER
      ========================= -->
 
-<nav>
+<header>
 
-
-  <!-- LOGO -->
 
   <a
     href="index.html"
@@ -632,13 +767,13 @@ nav {
   </a>
 
 
-  <div class="menu">
+  <nav>
 
 
     <!-- PROJECTS -->
 
     <div
-      class="menu-item projects"
+      class="nav-item projects"
       id="projectsMenu"
     >
 
@@ -651,29 +786,37 @@ nav {
       </button>
 
 
-     <div class="dropdown">
+      <div class="dropdown">
 
-  <a href="dengke.html">
-    DENGKE
-  </a>
 
-  <a href="Xigaze-earthquake.html">
-    XIGAZE EARTHQUAKE
-  </a>
+        <a href="dengke.html">
+          DENGKE
+        </a>
 
-  <a href="SONG%20OF%20THE%20SOUTHERN%20TIANSHAN.html">
-    SONG OF THE SOUTHERN TIANSHAN
-  </a>
 
-</div>
+        <a href="Xigaze-earthquake.html">
+          XIGAZE EARTHQUAKE
+        </a>
+
+
+        <a href="SONG%20OF%20THE%20SOUTHERN%20TIANSHAN.html">
+          SONG OF THE SOUTHERN TIANSHAN
+        </a>
+
+
+      </div>
+
     </div>
 
 
     <!-- ABOUT -->
 
-    <div class="menu-item">
+    <div class="nav-item">
 
-      <a href="about.html">
+      <a
+        href="about.html"
+        class="nav-link"
+      >
         ABOUT
       </a>
 
@@ -682,230 +825,264 @@ nav {
 
     <!-- CONTACT -->
 
-    <div class="menu-item">
+    <div class="nav-item">
 
-      <a href="contact.html">
+      <a
+        href="contact.html"
+        class="nav-link"
+      >
         CONTACT
       </a>
 
     </div>
 
+  </nav>
 
-  </div>
+</header>
 
-</nav>
 
 
 <!-- =========================
-     PROJECT INTRODUCTION
+     PROJECT INTRO
      ========================= -->
 
 <section class="project-intro">
 
 
-  <h1>
+  <h1 class="project-title">
     Dengke
   </h1>
 
 
-  <p>
+  <div class="project-description">
 
-    Captured in July 2026 during a journey with Professor Mel’s
-    Dengke Project team in Western Sichuan, this series of
-    photographs offers an intimate look at local Tibetan
-    portraits, religious tapestries, and the raw beauty
-    of the natural landscape.
 
-    <br><br>
+    <p>
+      Captured in July 2026 during a journey with Professor Mel’s
+      Dengke Project team in Western Sichuan, this series of
+      photographs offers an intimate look at local Tibetan
+      portraits, religious tapestries, and the raw beauty
+      of the natural landscape.
+    </p>
 
-    More than a visual chronicle, this collection serves
-    as a micro-anthropological exploration into the rich,
-    intricate layers of intersecting faiths and cultures.
-    Nestled within the folds of snow-capped mountains
-    and prayer flags, a subtle yet profound dialogue
-    unfolds at this remote, sacred intersection—where
-    the ancient oil lamps of Tibetan Buddhism quietly
-    meet the subtle footprints of Christian cross-cultural
-    mission. Through these frames of light and shadow,
-    we seek to witness a dynamic yet harmonious collision
-    of Eastern and Western civilisations, revealing the
-    universal human longing for redemption, promise,
-    and the eternal, hidden beneath the garments of
-    different faiths.
 
-  </p>
+    <p>
+      More than a visual chronicle, this collection serves
+      as a micro-anthropological exploration into the rich,
+      intricate layers of intersecting faiths and cultures.
+      Nestled within the folds of snow-capped mountains
+      and prayer flags, a subtle yet profound dialogue
+      unfolds at this remote, sacred intersection—where
+      the ancient oil lamps of Tibetan Buddhism quietly
+      meet the subtle footprints of Christian cross-cultural
+      mission.
+    </p>
+
+
+    <p>
+      Through these frames of light and shadow, we seek to
+      witness a dynamic yet harmonious collision of Eastern
+      and Western civilisations, revealing the universal human
+      longing for redemption, promise, and the eternal,
+      hidden beneath the garments of different faiths.
+    </p>
+
+
+  </div>
 
 </section>
 
 
+
 <!-- =========================
-     PHOTO GRID
+     PHOTO GALLERY
      ========================= -->
 
 <main class="gallery">
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-01.JPG"
       alt="Dengke 01"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-02.JPG"
       alt="Dengke 02"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-03.JPG"
       alt="Dengke 03"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-04.JPG"
       alt="Dengke 04"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-05.JPG"
       alt="Dengke 05"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-06.JPG"
       alt="Dengke 06"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-07.JPG"
       alt="Dengke 07"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-08.JPG"
       alt="Dengke 08"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-09.JPG"
       alt="Dengke 09"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-10.JPG"
       alt="Dengke 10"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-11.JPG"
       alt="Dengke 11"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-12.JPG"
       alt="Dengke 12"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-13.JPG"
       alt="Dengke 13"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-14.JPG"
       alt="Dengke 14"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-15.JPG"
       alt="Dengke 15"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-16.JPG"
       alt="Dengke 16"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-17.JPG"
       alt="Dengke 17"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-18.JPG"
       alt="Dengke 18"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-19.JPG"
       alt="Dengke 19"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
-  <div class="photo">
+  <figure>
     <img
       src="DENGKE-20.JPG"
       alt="Dengke 20"
+      loading="lazy"
     >
-  </div>
+  </figure>
 
 
 </main>
+
 
 
 <!-- =========================
@@ -919,16 +1096,16 @@ nav {
 
 
   <span
-    class="close"
-    id="close"
+    class="lightbox-close"
+    id="lightboxClose"
   >
     ×
   </span>
 
 
   <span
-    class="prev"
-    id="prev"
+    class="lightbox-prev"
+    id="lightboxPrev"
   >
     ‹
   </span>
@@ -943,8 +1120,8 @@ nav {
 
 
   <span
-    class="next"
-    id="next"
+    class="lightbox-next"
+    id="lightboxNext"
   >
     ›
   </span>
@@ -953,8 +1130,8 @@ nav {
 </div>
 
 
-<script>
 
+<script>
 
 /* =========================
    PROJECTS MENU
@@ -964,7 +1141,6 @@ const projectsButton =
   document.getElementById(
     "projectsButton"
   );
-
 
 const projectsMenu =
   document.getElementById(
@@ -985,8 +1161,6 @@ projectsButton.addEventListener(
   }
 );
 
-
-/* Close PROJECTS menu */
 
 document.addEventListener(
   "click",
@@ -1013,8 +1187,10 @@ document.addEventListener(
    ========================= */
 
 const photos =
-  document.querySelectorAll(
-    ".photo img"
+  Array.from(
+    document.querySelectorAll(
+      ".gallery img"
+    )
   );
 
 
@@ -1030,21 +1206,21 @@ const lightboxImage =
   );
 
 
-const closeButton =
+const lightboxClose =
   document.getElementById(
-    "close"
+    "lightboxClose"
   );
 
 
-const prevButton =
+const lightboxPrev =
   document.getElementById(
-    "prev"
+    "lightboxPrev"
   );
 
 
-const nextButton =
+const lightboxNext =
   document.getElementById(
-    "next"
+    "lightboxNext"
   );
 
 
@@ -1052,7 +1228,7 @@ let currentIndex = 0;
 
 
 /* =========================
-   OPEN
+   OPEN IMAGE
    ========================= */
 
 function openLightbox(index) {
@@ -1076,7 +1252,7 @@ function openLightbox(index) {
 
 
 /* =========================
-   CLOSE
+   CLOSE IMAGE
    ========================= */
 
 function closeLightbox() {
@@ -1085,6 +1261,8 @@ function closeLightbox() {
     "active"
   );
 
+  lightboxImage.src = "";
+
   document.body.style.overflow =
     "";
 
@@ -1092,21 +1270,14 @@ function closeLightbox() {
 
 
 /* =========================
-   NEXT
+   NEXT IMAGE
    ========================= */
 
-function showNext() {
+function nextImage() {
 
-  currentIndex++;
-
-  if (
-    currentIndex >=
-    photos.length
-  ) {
-
-    currentIndex = 0;
-
-  }
+  currentIndex =
+    (currentIndex + 1) %
+    photos.length;
 
   lightboxImage.src =
     photos[currentIndex].src;
@@ -1118,21 +1289,15 @@ function showNext() {
 
 
 /* =========================
-   PREVIOUS
+   PREVIOUS IMAGE
    ========================= */
 
-function showPrevious() {
+function previousImage() {
 
-  currentIndex--;
-
-  if (
-    currentIndex < 0
-  ) {
-
-    currentIndex =
-      photos.length - 1;
-
-  }
+  currentIndex =
+    (currentIndex - 1 +
+      photos.length) %
+    photos.length;
 
   lightboxImage.src =
     photos[currentIndex].src;
@@ -1144,15 +1309,15 @@ function showPrevious() {
 
 
 /* =========================
-   PHOTO CLICK
+   CLICK PHOTOS
    ========================= */
 
 photos.forEach(
-  (photo, index) => {
+  function(photo, index) {
 
     photo.addEventListener(
       "click",
-      () => {
+      function() {
 
         openLightbox(index);
 
@@ -1167,31 +1332,31 @@ photos.forEach(
    BUTTONS
    ========================= */
 
-closeButton.addEventListener(
+lightboxClose.addEventListener(
   "click",
   closeLightbox
 );
 
 
-nextButton.addEventListener(
+lightboxNext.addEventListener(
   "click",
-  showNext
+  nextImage
 );
 
 
-prevButton.addEventListener(
+lightboxPrev.addEventListener(
   "click",
-  showPrevious
+  previousImage
 );
 
 
 /* =========================
-   BACKGROUND CLICK
+   CLICK OUTSIDE IMAGE
    ========================= */
 
 lightbox.addEventListener(
   "click",
-  (event) => {
+  function(event) {
 
     if (
       event.target === lightbox
@@ -1211,7 +1376,7 @@ lightbox.addEventListener(
 
 document.addEventListener(
   "keydown",
-  (event) => {
+  function(event) {
 
     if (
       !lightbox.classList.contains(
@@ -1237,7 +1402,7 @@ document.addEventListener(
       event.key === "ArrowRight"
     ) {
 
-      showNext();
+      nextImage();
 
     }
 
@@ -1246,7 +1411,7 @@ document.addEventListener(
       event.key === "ArrowLeft"
     ) {
 
-      showPrevious();
+      previousImage();
 
     }
 
