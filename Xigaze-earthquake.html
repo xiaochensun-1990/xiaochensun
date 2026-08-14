@@ -12,6 +12,7 @@
 
 <title>Xigaze Earthquake — XIAOCHEN SUN</title>
 
+
 <style>
 
 /* =========================
@@ -29,9 +30,20 @@ html {
 }
 
 body {
-  background: #111;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+
+  background: #1b2025;
+
+  color: #f2f2f2;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
 }
 
 a {
@@ -41,59 +53,70 @@ a {
 
 
 /* =========================
-   NAVIGATION
+   HEADER / NAVIGATION
    ========================= */
 
 nav {
 
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
   width: 100%;
-  height: 80px;
 
-  padding: 28px 40px;
+  padding:
+    30px 4vw 26px 4vw;
 
   display: flex;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
-  align-items: flex-start;
+  align-items:
+    center;
 
-  /* Solid background prevents
-     page content from showing
-     through the navigation. */
+  position: sticky;
 
-  background: #111;
+  top: 0;
 
-  /* Keep navigation above
-     all project content. */
+  z-index: 100;
 
-  z-index: 9999;
+  background:
+    rgba(27, 32, 37, 0.96);
+
+  backdrop-filter:
+    blur(8px);
 
 }
 
+
+/* =========================
+   LOGO
+   ========================= */
 
 .logo {
 
+  color: #ffffff;
+
+  text-decoration: none;
+
   font-size: 16px;
 
-  font-weight: 600;
+  letter-spacing: 0.08em;
 
-  letter-spacing: 2px;
+  font-weight: 500;
 
 }
 
+
+/* =========================
+   NAVIGATION MENU
+   ========================= */
 
 .menu {
 
   display: flex;
 
-  align-items: flex-start;
-
   gap: 30px;
+
+  align-items:
+    center;
 
 }
 
@@ -108,20 +131,20 @@ nav {
 .menu-item > a,
 .projects-button {
 
+  color: #ffffff;
+
+  text-decoration: none;
+
   font-family:
     Arial,
     Helvetica,
     sans-serif;
 
-  font-size: 11px;
+  font-size: 13px;
 
-  letter-spacing: 2px;
+  letter-spacing: 0.08em;
 
-  color: #fff;
-
-  text-decoration: none;
-
-  white-space: nowrap;
+  font-weight: 400;
 
   background: none;
 
@@ -137,7 +160,7 @@ nav {
 .menu-item > a:hover,
 .projects-button:hover {
 
-  opacity: 0.55;
+  opacity: 0.5;
 
 }
 
@@ -154,11 +177,11 @@ nav {
 
   right: 0;
 
-  min-width: 150px;
+  min-width: 300px;
 
-  padding-top: 10px;
+  padding-top: 12px;
 
-  background: #111;
+  background: #1b2025;
 
   opacity: 0;
 
@@ -208,15 +231,15 @@ nav {
   display: block;
 
   padding:
-    6px 0;
+    7px 0;
 
   text-align: right;
 
   font-size: 10px;
 
-  letter-spacing: 1.8px;
+  letter-spacing: 0.12em;
 
-  color: #fff;
+  color: #ffffff;
 
   text-decoration: none;
 
@@ -227,7 +250,7 @@ nav {
 
 .dropdown a:hover {
 
-  opacity: 0.55;
+  opacity: 0.5;
 
 }
 
@@ -257,15 +280,8 @@ nav {
 
   flex-shrink: 0;
 
-  /*
-    Navigation height = 80px.
-    125px top padding gives
-    comfortable clearance below
-    the fixed navigation.
-  */
-
   padding:
-    125px
+    55px
     30px
     80px
     40px;
@@ -277,13 +293,17 @@ nav {
 
 .project-intro h1 {
 
-  font-size: 22px;
+  font-size:
+    clamp(22px, 2.2vw, 34px);
 
-  font-weight: 500;
+  font-weight: 400;
 
-  letter-spacing: 1px;
+  letter-spacing:
+    0.04em;
 
-  margin-bottom: 18px;
+  line-height: 1.2;
+
+  margin-bottom: 42px;
 
 }
 
@@ -294,9 +314,9 @@ nav {
 
   font-size: 13px;
 
-  line-height: 1.7;
+  line-height: 1.8;
 
-  color: #999;
+  color: #d8dadd;
 
 }
 
@@ -311,13 +331,8 @@ nav {
 
   flex-shrink: 0;
 
-  /*
-    Keep the gallery below the
-    fixed navigation as well.
-  */
-
   padding:
-    125px
+    55px
     24px
     80px
     10px;
@@ -399,11 +414,6 @@ nav {
 
   justify-content: center;
 
-  /*
-    Lightbox remains above
-    the navigation.
-  */
-
   z-index: 10000;
 
 }
@@ -456,6 +466,13 @@ nav {
 }
 
 
+.close:hover {
+
+  opacity: 0.5;
+
+}
+
+
 /* =========================
    PREVIOUS / NEXT
    ========================= */
@@ -502,8 +519,7 @@ nav {
 
 
 .prev:hover,
-.next:hover,
-.close:hover {
+.next:hover {
 
   opacity: 0.5;
 
@@ -518,27 +534,25 @@ nav {
 
   nav {
 
-    height: 65px;
-
     padding:
-      22px
-      20px;
+      22px 5vw 20px 5vw;
 
   }
 
 
   .logo {
 
-    font-size: 14px;
+    font-size: 13px;
 
   }
 
 
   .menu {
 
-    gap: 15px;
+    gap: 16px;
 
-    font-size: 9px;
+    align-items:
+      center;
 
   }
 
@@ -546,9 +560,7 @@ nav {
   .menu-item > a,
   .projects-button {
 
-    font-size: 9px;
-
-    letter-spacing: 1.5px;
+    font-size: 10px;
 
   }
 
@@ -556,6 +568,8 @@ nav {
   .dropdown {
 
     top: 19px;
+
+    min-width: 250px;
 
   }
 
@@ -582,24 +596,26 @@ nav {
 
   .project-intro {
 
-    width: 100%;
+    width: 90%;
 
-    /*
-      Mobile navigation height = 65px.
-      95px gives safe clearance.
-    */
+    margin:
+      38px auto 40px auto;
 
-    padding:
-      95px
-      20px
-      40px;
+    padding: 0;
+
+    text-align: left;
 
   }
 
 
   .project-intro h1 {
 
-    font-size: 20px;
+    font-size: 19px;
+
+    letter-spacing:
+      0.035em;
+
+    margin-bottom: 28px;
 
   }
 
@@ -608,22 +624,26 @@ nav {
 
     font-size: 13px;
 
+    line-height: 1.75;
+
+    letter-spacing: 0;
+
   }
 
 
   .gallery {
 
-    width: 100%;
+    width: 90%;
 
-    padding:
-      0
-      10px
-      50px;
+    margin:
+      0 auto 65px auto;
+
+    padding: 0;
 
     grid-template-columns:
       repeat(2, 1fr);
 
-    gap: 6px;
+    gap: 10px;
 
   }
 
@@ -643,7 +663,7 @@ nav {
 
     right: 18px;
 
-    font-size: 28px;
+    font-size: 30px;
 
   }
 
@@ -651,7 +671,7 @@ nav {
   .prev,
   .next {
 
-    font-size: 28px;
+    font-size: 30px;
 
     padding: 15px;
 
@@ -701,21 +721,24 @@ nav {
       </button>
 
 
-     <div class="dropdown">
+      <div class="dropdown">
 
-  <a href="dengke.html">
-    DENGKE
-  </a>
+        <a href="dengke.html">
+          DENGKE
+        </a>
 
-  <a href="Xigaze-earthquake.html">
-    XIGAZE EARTHQUAKE
-  </a>
 
-  <a href="SONG%20OF%20THE%20SOUTHERN%20TIANSHAN.html">
-    SONG OF THE SOUTHERN TIANSHAN
-  </a>
+        <a href="Xigaze-earthquake.html">
+          XIGAZE EARTHQUAKE
+        </a>
 
-</div>
+
+        <a href="SONG%20OF%20THE%20SOUTHERN%20TIANSHAN.html">
+          SONG OF THE SOUTHERN TIANSHAN
+        </a>
+
+      </div>
+
     </div>
 
 
@@ -744,6 +767,7 @@ nav {
   </div>
 
 </nav>
+
 
 
 <!-- =========================
@@ -823,15 +847,16 @@ nav {
       As it turned out, he was a university student studying in
       Lhasa. When the earthquake hit, he threw caution to the wind
       and rushed back to Tingri. Only after seeing with his own eyes
-      that his family was safe was he now heading back to his studies.
-      During our drive, he shared a fascinating perspective rooted
-      in the Buddhist concept of Karma. He was utterly convinced
-      that the earthquake happened because human over-development
-      had disrupted the natural environment, prompting Avalokiteshvara
-      (the Bodhisattva of Compassion) to shake the earth as a stern
-      warning for humanity to live in harmony with nature. He spoke
-      of the deity with such absolute certainty, as if the Bodhisattva
-      were a close, personal friend.
+      that his family was safe was he now heading back to his
+      studies. During our drive, he shared a fascinating perspective
+      rooted in the Buddhist concept of Karma. He was utterly
+      convinced that the earthquake happened because human
+      over-development had disrupted the natural environment,
+      prompting Avalokiteshvara (the Bodhisattva of Compassion)
+      to shake the earth as a stern warning for humanity to live
+      in harmony with nature. He spoke of the deity with such
+      absolute certainty, as if the Bodhisattva were a close,
+      personal friend.
 
       <br><br>
 
@@ -852,6 +877,7 @@ nav {
   </section>
 
 
+
   <!-- =======================
        PHOTO GRID
        ======================= -->
@@ -863,6 +889,7 @@ nav {
       <img
         src="Xigaze Earthquake-01.JPG"
         alt="Xigaze Earthquake 01"
+        loading="lazy"
       >
     </div>
 
@@ -871,6 +898,7 @@ nav {
       <img
         src="Xigaze Earthquake-02.JPG"
         alt="Xigaze Earthquake 02"
+        loading="lazy"
       >
     </div>
 
@@ -879,6 +907,7 @@ nav {
       <img
         src="Xigaze Earthquake-03.JPG"
         alt="Xigaze Earthquake 03"
+        loading="lazy"
       >
     </div>
 
@@ -887,6 +916,7 @@ nav {
       <img
         src="Xigaze Earthquake-04.JPG"
         alt="Xigaze Earthquake 04"
+        loading="lazy"
       >
     </div>
 
@@ -895,6 +925,7 @@ nav {
       <img
         src="Xigaze Earthquake-05.JPG"
         alt="Xigaze Earthquake 05"
+        loading="lazy"
       >
     </div>
 
@@ -903,6 +934,7 @@ nav {
       <img
         src="Xigaze Earthquake-06.JPG"
         alt="Xigaze Earthquake 06"
+        loading="lazy"
       >
     </div>
 
@@ -911,6 +943,7 @@ nav {
       <img
         src="Xigaze Earthquake-07.JPG"
         alt="Xigaze Earthquake 07"
+        loading="lazy"
       >
     </div>
 
@@ -919,6 +952,7 @@ nav {
       <img
         src="Xigaze Earthquake-08.JPG"
         alt="Xigaze Earthquake 08"
+        loading="lazy"
       >
     </div>
 
@@ -927,6 +961,7 @@ nav {
       <img
         src="Xigaze Earthquake-09.JPG"
         alt="Xigaze Earthquake 09"
+        loading="lazy"
       >
     </div>
 
@@ -935,6 +970,7 @@ nav {
       <img
         src="Xigaze Earthquake-10.JPG"
         alt="Xigaze Earthquake 10"
+        loading="lazy"
       >
     </div>
 
@@ -943,6 +979,7 @@ nav {
       <img
         src="Xigaze Earthquake-11.JPG"
         alt="Xigaze Earthquake 11"
+        loading="lazy"
       >
     </div>
 
@@ -951,6 +988,7 @@ nav {
       <img
         src="Xigaze Earthquake-12.JPG"
         alt="Xigaze Earthquake 12"
+        loading="lazy"
       >
     </div>
 
@@ -959,6 +997,7 @@ nav {
       <img
         src="Xigaze Earthquake-13.JPG"
         alt="Xigaze Earthquake 13"
+        loading="lazy"
       >
     </div>
 
@@ -967,6 +1006,7 @@ nav {
       <img
         src="Xigaze Earthquake-14.JPG"
         alt="Xigaze Earthquake 14"
+        loading="lazy"
       >
     </div>
 
@@ -975,6 +1015,7 @@ nav {
       <img
         src="Xigaze Earthquake-15.JPG"
         alt="Xigaze Earthquake 15"
+        loading="lazy"
       >
     </div>
 
@@ -983,6 +1024,7 @@ nav {
       <img
         src="Xigaze Earthquake-16.JPG"
         alt="Xigaze Earthquake 16"
+        loading="lazy"
       >
     </div>
 
@@ -991,6 +1033,7 @@ nav {
       <img
         src="Xigaze Earthquake-17.JPG"
         alt="Xigaze Earthquake 17"
+        loading="lazy"
       >
     </div>
 
@@ -999,6 +1042,7 @@ nav {
       <img
         src="Xigaze Earthquake-18.JPG"
         alt="Xigaze Earthquake 18"
+        loading="lazy"
       >
     </div>
 
@@ -1007,6 +1051,7 @@ nav {
       <img
         src="Xigaze Earthquake-19.JPG"
         alt="Xigaze Earthquake 19"
+        loading="lazy"
       >
     </div>
 
@@ -1015,6 +1060,7 @@ nav {
       <img
         src="Xigaze Earthquake-20.JPG"
         alt="Xigaze Earthquake 20"
+        loading="lazy"
       >
     </div>
 
@@ -1022,6 +1068,7 @@ nav {
   </main>
 
 </div>
+
 
 
 <!-- =========================
@@ -1069,6 +1116,7 @@ nav {
 </div>
 
 
+
 <script>
 
 /* =========================
@@ -1101,7 +1149,9 @@ projectsButton.addEventListener(
 );
 
 
-/* Close PROJECTS menu */
+/* =========================
+   CLOSE PROJECTS MENU
+   ========================= */
 
 document.addEventListener(
   "click",
@@ -1167,7 +1217,7 @@ let currentIndex = 0;
 
 
 /* =========================
-   OPEN
+   OPEN LIGHTBOX
    ========================= */
 
 function openLightbox(index) {
@@ -1191,7 +1241,7 @@ function openLightbox(index) {
 
 
 /* =========================
-   CLOSE
+   CLOSE LIGHTBOX
    ========================= */
 
 function closeLightbox() {
@@ -1200,6 +1250,8 @@ function closeLightbox() {
     "active"
   );
 
+  lightboxImage.src = "";
+
   document.body.style.overflow =
     "";
 
@@ -1207,7 +1259,7 @@ function closeLightbox() {
 
 
 /* =========================
-   NEXT
+   NEXT IMAGE
    ========================= */
 
 function showNext() {
@@ -1233,7 +1285,7 @@ function showNext() {
 
 
 /* =========================
-   PREVIOUS
+   PREVIOUS IMAGE
    ========================= */
 
 function showPrevious() {
